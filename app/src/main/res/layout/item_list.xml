@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+
+    <ImageButton
+        android:id="@+id/idImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#056674"
+        android:src="@drawable/ic_school_black_24dp" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+    <TextView
+        android:id="@+id/nombre"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="Universidad"
+        android:background="#66bfbf"
+        android:padding="@dimen/space_xl"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
+        android:textSize="@dimen/space_xl"/>
+
+
+
+</LinearLayout>
