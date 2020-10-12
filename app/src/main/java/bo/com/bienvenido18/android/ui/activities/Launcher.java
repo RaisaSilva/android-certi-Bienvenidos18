@@ -1,4 +1,4 @@
-package bo.com.bienvenido18.android;
+package bo.com.bienvenido18.android.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+
+import bo.com.bienvenido18.android.R;
 
 public class Launcher extends AppCompatActivity {
     Button tramite;

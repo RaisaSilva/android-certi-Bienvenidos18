@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".MainActivity">
+    tools:context=".ui.activities.LoginActivity">
 
 
     <LinearLayout
@@ -57,7 +57,8 @@
             android:layout_marginTop="@dimen/space_lg"
             android:background="@android:color/holo_orange_dark"
             android:text="Login"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            android:onClick="login"/>
 
 
     </LinearLayout>
