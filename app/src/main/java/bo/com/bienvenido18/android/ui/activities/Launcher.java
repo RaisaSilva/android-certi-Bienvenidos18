@@ -29,19 +29,21 @@ public class Launcher extends AppCompatActivity {
         universidad = (Button)findViewById(R.id.universidad);
         sabias = (Button)findViewById(R.id.sabias);
 
-        /*
+
         tramite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Launcher.this, tramite.class));
+                startActivity(new Intent(Launcher.this, Procedures.class));
             }
         });
+
         universidad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Launcher.this, universidad.class));
+                startActivity(new Intent(Launcher.this, ActivityU.class));
             }
         });
+        /*
         sabias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

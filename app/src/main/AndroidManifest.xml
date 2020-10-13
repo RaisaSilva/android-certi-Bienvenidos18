@@ -11,12 +11,16 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activities.Launcher"></activity>
         <activity android:name=".ui.activities.ActivityU"></activity>
+        <activity android:name=".ui.activities.Procedures"></activity>
+
+
         <activity android:name=".ui.activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 
