@@ -37,7 +37,7 @@ public class ActivityU extends AppCompatActivity {
         listaUniversidades.add(new Universidades("UPB",R.drawable.ic_school_black_24dp));
         listaUniversidades.add(new Universidades("UMSA",R.drawable.ic_school_black_24dp));
         listaUniversidades.add(new Universidades("LA SALLE",R.drawable.ic_school_black_24dp));
-        listaUniversidades.add(new Universidades("CATOLICA",R.drawable.ic_school_black_24dp));
+        listaUniversidades.add(new Universidades("UCB",R.drawable.ic_school_black_24dp));
         listaUniversidades.add(new Universidades("UTB",R.drawable.ic_school_black_24dp));
         listaUniversidades.add(new Universidades("UNIFRANZ",R.drawable.ic_school_black_24dp));
         listaUniversidades.add(new Universidades("UNIVALLE",R.drawable.ic_school_black_24dp));

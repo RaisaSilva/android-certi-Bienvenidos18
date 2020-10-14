@@ -23,6 +23,7 @@ public class MockRepository implements RepositoryImpl {
 
         fakeUsers.add(new UserO("raisa.silva@gmail.com", "contrasena2"));
         fakeUsers.add(new UserP("liz.vasquez@gmail.com", "contrasena3"));
+        fakeUsers.add(new UserO("benjamin.soto@gmail.com","contrasena4"));
         return fakeUsers;
     }
 
