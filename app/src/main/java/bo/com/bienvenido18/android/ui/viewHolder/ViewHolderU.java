@@ -13,12 +13,14 @@ import java.text.BreakIterator;
 import bo.com.bienvenido18.android.R;
 
 public class ViewHolderU extends RecyclerView.ViewHolder {
-    public TextView nombre;
-    public ImageView foto;
+    public ImageView coverImageView;
+    public TextView nameTextView;
 
     public ViewHolderU(@NonNull View itemView) {
         super(itemView);
-        nombre = (TextView)itemView.findViewById(R.id.nombre);
-        foto= (ImageView)itemView.findViewById(R.id.idImage);
+        coverImageView = itemView.findViewById(R.id.idImage);
+        nameTextView = itemView.findViewById(R.id.nombre);
+
+
     }
 }

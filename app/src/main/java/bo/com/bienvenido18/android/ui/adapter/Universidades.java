@@ -1,27 +1,42 @@
 package bo.com.bienvenido18.android.ui.adapter;
 
+import java.util.List;
+
 public class Universidades {
-    private String nombre;
-    private int foto;
+    private String uuid;
+    private String coverPhoto;
+    private String displayName; //Bolivian Foods SRL --> Burger King
+    private String address;
 
-    public Universidades(String nombre, int foto) {
-        this.nombre = nombre;
-        this.foto = foto;
+    public String getUuid() {
+        return uuid;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public String getCoverPhoto() {
+        return coverPhoto;
     }
 
-    public int getFoto() {
-        return foto;
+    public void setCoverPhoto(String coverPhoto) {
+        this.coverPhoto = coverPhoto;
     }
 
-    public void setFoto(int foto) {
-        this.foto = foto;
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

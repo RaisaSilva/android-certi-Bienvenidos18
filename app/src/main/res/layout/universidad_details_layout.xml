@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:weightSum="100"
+    android:id="@+id/layout_detail"
+    tools:context=".ui.activities.UniversidadesDetails">
+    <ImageView
+        android:id="@+id/imagDetalle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="70"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"/>
+    <TextView
+        android:id="@+id/nombreU"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre Universidad"
+        android:textSize="20dp"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/textoDetalle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="detalles"
+        android:textSize="20dp"
+        android:textColor="#000"/>
+
+</LinearLayout>
