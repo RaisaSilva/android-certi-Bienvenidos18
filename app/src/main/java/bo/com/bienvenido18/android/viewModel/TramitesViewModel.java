@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
+import bo.com.bienvenido18.android.model.Base;
 import bo.com.bienvenido18.android.model.users.Tramites;
 import bo.com.bienvenido18.android.repository.MockRepository;
 import bo.com.bienvenido18.android.repository.RepositoryImpl;

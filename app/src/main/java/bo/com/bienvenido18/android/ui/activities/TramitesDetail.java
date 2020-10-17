@@ -25,7 +25,7 @@ public class TramitesDetail extends AppCompatActivity {
 
     private static final String LOG = TramitesDetail.class.getSimpleName();
     private Context context;
-    private ConstraintLayout constraintLayout;
+    private LinearLayout linearLayout;
     private ImageView foto;
     private TextView title;
     private TramiteDetailViewModel viewModel;

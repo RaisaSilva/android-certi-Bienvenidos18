@@ -8,10 +8,8 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,22 +19,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bo.com.bienvenido18.android.R;
+import bo.com.bienvenido18.android.model.Base;
 import bo.com.bienvenido18.android.model.users.Tramites;
 import bo.com.bienvenido18.android.ui.adapter.AdapterTramites;
-import bo.com.bienvenido18.android.ui.adapter.AdapterU;
-import bo.com.bienvenido18.android.ui.adapter.Universidades;
 import bo.com.bienvenido18.android.ui.callBack.TramitesCallback;
-import bo.com.bienvenido18.android.ui.callBack.UniversidadesCallback;
 import bo.com.bienvenido18.android.utils.Constants;
+import bo.com.bienvenido18.android.utils.ErrorMapper;
 import bo.com.bienvenido18.android.viewModel.TramitesViewModel;
-import bo.com.bienvenido18.android.viewModel.UniversidadesViewModel;
 
 public class ActivityTramites extends AppCompatActivity implements TramitesCallback {
 
     private static final String LOG = ActivityU.class.getName();
     private Context context;
     private TramitesViewModel viewModel;
-    private ConstraintLayout constraintlayout;
+    private LinearLayout linearLayout;
     private RecyclerView transRecyclerView;
     private AdapterTramites adapter;
 
@@ -58,7 +54,7 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
         subscribeToData();
     }
     private void initViews() {
-        constraintlayout = findViewById(R.id.layoutTramite);
+        linearLayout = findViewById(R.id.layoutTramite);
         transRecyclerView = findViewById(R.id.RecyclerIdTramites);
 
         adapter = new AdapterTramites(tramites, context);

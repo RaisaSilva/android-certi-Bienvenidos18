@@ -33,7 +33,7 @@ public class Launcher extends AppCompatActivity {
         tramite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Launcher.this, Procedures.class));
+                startActivity(new Intent(Launcher.this, ActivityTramites.class));
             }
         });
 
