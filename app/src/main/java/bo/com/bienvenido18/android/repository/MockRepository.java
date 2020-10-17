@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bo.com.bienvenido18.android.model.Base;
+import bo.com.bienvenido18.android.model.users.Tramites;
 import bo.com.bienvenido18.android.model.users.UserO;
 import bo.com.bienvenido18.android.model.users.UserP;
 import bo.com.bienvenido18.android.ui.adapter.Universidades;
@@ -28,7 +29,7 @@ public class MockRepository implements RepositoryImpl {
 
         fakeUsers.add(new UserO("raisa.silva@gmail.com", "contrasena2"));
         fakeUsers.add(new UserP("liz.vasquez@gmail.com", "contrasena3"));
-        fakeUsers.add(new UserO("benjamin.soto@gmail.com","contrasena4"));
+        fakeUsers.add(new UserO("benjamin.soto@gmail.com", "contrasena4"));
         return fakeUsers;
     }
 
@@ -70,5 +71,17 @@ public class MockRepository implements RepositoryImpl {
 
     }
 
+    @Override
+    public LiveData<Base<List<Tramites>>> getTramites(String trans) {
+        MutableLiveData<Base<List<Tramites>>> results = new MutableLiveData<>();
+        String json = "[{\"uuid\":\"1\",\"titlePhoto\":\"venta de autos\",\"coverPhoto\":\"https://i.prcdn.co/img?regionKey=8FCcrEagurNyAFzvjqo%2F6w%3D%3D\"},{\"uuid\":\"2\",\"titlePhoto\":\"Procedimiento legislativo\",\"coverPhoto\":\"https://image.slidesharecdn.com/procedimientolegislativovigente-1-120921151702-phpapp01/95/procedimiento-legislativo-vigente-en-bolivia-1-728.jpg?cb=1348240889\"},{\"uuid\":\"3\",\"titlePhoto\":\"Compra de propiedad\",\"coverPhoto\":\"https://i.prcdn.co/img?regionKey=diG8G3PK6WpRfMqmsbQiIQ%3D%3D\"},{\"uuid\":\"4\",\"titlePhoto\":\"Viviendas\",\"coverPhoto\":\"https://i.pinimg.com/originals/b1/e9/ab/b1e9ab014f4440c04e7dd23752b978c0.jpg.\"},{\"uuid\":\"5\",\"titlePhoto\":\"Elección de vivienda\",\"coverPhoto\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSZtXLr-1A_eYCHQkZ2k5JlMD7dcN4gwwxnTQ&usqp=CAU\"},{\"uuid\":\"3\",\"titlePhoto\":\"Compra de propiedad\",\"coverPhoto\":\"https://i.prcdn.co/img?regionKey=diG8G3PK6WpRfMqmsbQiIQ%3D%3D\"},{\"uuid\":\"4\",\"titlePhoto\":\"Viviendas\",\"coverPhoto\":\"https://i.pinimg.com/originals/b1/e9/ab/b1e9ab014f4440c04e7dd23752b978c0.jpg.\"},{\"uuid\":\"5\",\"titlePhoto\":\"Elección de vivienda\",\"coverPhoto\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSZtXLr-1A_eYCHQkZ2k5JlMD7dcN4gwwxnTQ&usqp=CAU\"},{\"uuid\":\"3\",\"titlePhoto\":\"Compra de propiedad\",\"coverPhoto\":\"https://i.prcdn.co/img?regionKey=diG8G3PK6WpRfMqmsbQiIQ%3D%3D\"},{\"uuid\":\"4\",\"titlePhoto\":\"Viviendas\",\"coverPhoto\":\"https://i.pinimg.com/originals/b1/e9/ab/b1e9ab014f4440c04e7dd23752b978c0.jpg.\"},{\"uuid\":\"5\",\"titlePhoto\":\"Elección de vivienda\",\"coverPhoto\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSZtXLr-1A_eYCHQkZ2k5JlMD7dcN4gwwxnTQ&usqp=CAU\"}]";
 
+        Type listType = new TypeToken<ArrayList<Tramites>>() {
+        }.getType();
+        List<Tramites> uniList = new Gson().fromJson(json, listType);
+        results.postValue(new Base<>(uniList));
+        return results;
+
+
+    }
 }

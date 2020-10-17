@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 import bo.com.bienvenido18.android.model.Base;
+import bo.com.bienvenido18.android.model.users.Tramites;
 import bo.com.bienvenido18.android.model.users.UserO;
 import bo.com.bienvenido18.android.ui.adapter.Universidades;
 
@@ -18,4 +19,12 @@ public class Repository implements RepositoryImpl {
     public LiveData<Base<List<Universidades>>> getUniveridades(String unis) {
         return null;
     }
+
+
+    @Override
+    public LiveData<Base<List<Tramites>>> getTramites(String tram) {
+        return null;
+    }
+
+
 }
