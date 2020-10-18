@@ -43,15 +43,15 @@ public class Launcher extends AppCompatActivity {
                 startActivity(new Intent(Launcher.this, ActivityU.class));
             }
         });
-        /*
+
         sabias.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Launcher.this, sabias.class));
+                startActivity(new Intent(Launcher.this, SabiasActivity.class));
             }
         });
 
-         */
+
         //prueba
 
 
