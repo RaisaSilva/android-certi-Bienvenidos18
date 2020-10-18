@@ -7,6 +7,7 @@ import java.util.List;
 import bo.com.bienvenido18.android.model.Base;
 import bo.com.bienvenido18.android.model.users.Tramites;
 import bo.com.bienvenido18.android.model.users.UserO;
+import bo.com.bienvenido18.android.repository.api.ApiRepository;
 import bo.com.bienvenido18.android.ui.adapter.Universidades;
 
 public class Repository implements RepositoryImpl {
@@ -23,7 +24,7 @@ public class Repository implements RepositoryImpl {
 
     @Override
     public LiveData<Base<List<Tramites>>> getTramites(String tram) {
-        return null;
+        return ApiRepository.getInstance().getTramites();
     }
 
 
