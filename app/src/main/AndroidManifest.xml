@@ -10,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.activities.SabiasActivity"></activity>
         <activity android:name=".ui.activities.Launcher"></activity>
         <activity android:name=".ui.activities.ActivityU"></activity>
         <activity android:name=".ui.activities.ActivityTramites"></activity>
