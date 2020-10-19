@@ -2,6 +2,8 @@ package bo.com.bienvenido18.android.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
@@ -11,11 +13,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.wajahatkarim3.easyflipviewpager.CardFlipPageTransformer;
 
 import java.util.ArrayList;
 
 import bo.com.bienvenido18.android.R;
+import bo.com.bienvenido18.android.ui.fragments.sabiasCardFragment;
 import me.relex.circleindicator.CircleIndicator;
 
 public class SabiasActivity extends AppCompatActivity {
@@ -91,14 +95,23 @@ public class SabiasActivity extends AppCompatActivity {
                     } else {
                         sabiasViewPager.setCurrentItem(0, true);
                     }
+                    /*
+                    sabiasCardFragment frag =  sabiasCardFragment.newInstance("Hola dd", "Benjamin dd", R.color.design_default_color_background);
+                    FragmentManager manager = getSupportFragmentManager();
+                    FragmentTransaction transaction = manager.beginTransaction();
+                    transaction.add(R.id.cardViewPager, frag);
+                    transaction.commit();
+
+                     */
                 }
             });
 
 
 
 
-            int[] sides = {R.drawable.card1, R.drawable.card2, R.drawable.card3};
-            imgCardSide.setImageResource(sides[position]);
+            String[] sides = {"https://i.imgur.com/BPDdsjx.png","https://i.imgur.com/ycTTTjw.png","https://i.imgur.com/HmXO88E.png"};
+            Glide.with(context).load(sides[position]).into(imgCardSide);
+
             container.addView(rootView);
             return rootView;
 
