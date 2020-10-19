@@ -10,67 +10,59 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
-import com.synnapps.carouselview.CarouselView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import bo.com.bienvenido18.android.R;
 import bo.com.bienvenido18.android.model.Base;
-import bo.com.bienvenido18.android.ui.adapter.AdapterU;
-import bo.com.bienvenido18.android.ui.adapter.Universidades;
-import bo.com.bienvenido18.android.ui.callBack.UniversidadesCallback;
+import bo.com.bienvenido18.android.model.users.Tramites;
+import bo.com.bienvenido18.android.ui.adapter.AdapterTramites;
+import bo.com.bienvenido18.android.ui.callBack.TramitesCallback;
 import bo.com.bienvenido18.android.utils.Constants;
 import bo.com.bienvenido18.android.utils.ErrorMapper;
-import bo.com.bienvenido18.android.viewModel.UniversidadesViewModel;
+import bo.com.bienvenido18.android.viewModel.TramitesViewModel;
 
-public class ActivityU extends AppCompatActivity implements UniversidadesCallback {
+public class ActivityTramites extends AppCompatActivity implements TramitesCallback {
+
     private static final String LOG = ActivityU.class.getName();
     private Context context;
-    private UniversidadesViewModel viewModel;
-    private LinearLayout parentLinearLayout;
-    private RecyclerView unisRecyclerView;
-    private AdapterU adapter;
+    private TramitesViewModel viewModel;
+    private LinearLayout linearLayout;
+    private RecyclerView transRecyclerView;
+    private AdapterTramites adapter;
 
-    private List<Universidades> universidades = new ArrayList<>();
-
-
-
+    private List<Tramites> tramites = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.w(LOG, "onCreate");
-        setContentView(R.layout.list_university);
+        setContentView(R.layout.list_procedures);
         context = this;
 
         //Injectando el viewModel
-        viewModel = new ViewModelProvider(this).get(UniversidadesViewModel.class);
+        viewModel = new ViewModelProvider(this).get(TramitesViewModel.class);
 
         initViews();
         initEvents();
         getIntentValues();
         subscribeToData();
-
-        //recyclerU.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
-
     }
-
     private void initViews() {
-        parentLinearLayout = findViewById(R.id.parentLinearLayout);
-        unisRecyclerView = findViewById(R.id.RecyclerId);
+        linearLayout = findViewById(R.id.layoutTramite);
+        transRecyclerView = findViewById(R.id.RecyclerIdTramites);
 
-        adapter = new AdapterU(universidades, context);
-        unisRecyclerView.setAdapter(adapter);
-        unisRecyclerView.setLayoutManager(
+        adapter = new AdapterTramites(tramites, context);
+        transRecyclerView.setAdapter(adapter);
+        transRecyclerView.setLayoutManager(
                 new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
 
-        unisRecyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+       // transRecyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
     }
     private void initEvents() {
         adapter.setCallback(this);
@@ -86,15 +78,15 @@ public class ActivityU extends AppCompatActivity implements UniversidadesCallbac
 
     private void subscribeToData() {
 
-        viewModel.getUniversidades("").observe(this, new Observer<Base<List<Universidades>>>() {
+        viewModel.getTramites("").observe(this, new Observer<Base<List<Tramites>>>() {
 
 
             @Override
-            public void onChanged(Base<List<Universidades>> listBase) {
+            public void onChanged(Base<List<Tramites>> listBase) {
                 if (listBase.isSuccess()) {
-                    universidades = listBase.getData();
-                    adapter.updateItems(universidades);
-                    Log.e("getStartups", new Gson().toJson(listBase));
+                    tramites = listBase.getData();
+                    adapter.updateItems(tramites);
+                    Log.e("getTramites", new Gson().toJson(listBase));
                 } else {
                     Toast.makeText(context, ErrorMapper.getError(context, listBase.getErrorCode()),
                             Toast.LENGTH_SHORT).show();
@@ -105,10 +97,12 @@ public class ActivityU extends AppCompatActivity implements UniversidadesCallbac
 
 
     @Override
-    public void onUniversidadClicked(Universidades universidades) {
-                Intent intent = new Intent(context,UniversidadesDetails.class);
-                intent.putExtra(Constants.KEY_STARTUP_SELECTED, new Gson().toJson(universidades));
-                startActivity(intent);
+    public void OnTramitesClicked(Tramites tramites) {
+        Intent intent = new Intent(context,TramitesDetail.class);
+        intent.putExtra(Constants.KEY_STARTUP_SELECTED, new Gson().toJson(tramites));
+        startActivity(intent);
 
     }
 }
+
+

@@ -5,13 +5,12 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
-
-    <ImageButton
+    <ImageView
         android:id="@+id/idImage"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:background="#056674"
-        android:src="@drawable/ic_school_black_24dp" />
+
+        />
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -35,7 +35,6 @@ dependencies {
 
     // Room components --> DB local
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     annotationProcessor "androidx.room:room-compiler:$rootProject.roomVersion"
     androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
 
@@ -63,17 +62,8 @@ dependencies {
     //Color Picker
     implementation 'com.thebluealliance:spectrum:0.7.1'
 
-    //Easy flip view pager
-    implementation 'com.wajahatkarim3.easyflipviewpager:easyflipviewpager:2.0.0'
-    //Dots
-    implementation 'me.relex:circleindicator:2.1.4'
-    //glide
-    compile 'com.github.bumptech.glide:glide:4.11.0'
-
-}
-
-repositories {
-    mavenCentral()
-    maven { url 'https://maven.google.com' }
+    //Carousel y Picasso
+    implementation 'com.synnapps:carouselview:0.1.5'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
 }
