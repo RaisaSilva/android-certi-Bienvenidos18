@@ -6,11 +6,18 @@
     android:weightSum="100"
     android:id="@+id/layout_detail"
     tools:context=".ui.activities.TramitesDetail">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="70"
+        android:layout_weight="50"
         android:scaleType="centerCrop"
         android:src="@mipmap/ic_launcher"/>
     <TextView
@@ -20,6 +27,34 @@
         android:text="Nombre Universidad"
         android:textSize="20dp"
         android:textColor="#000"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/ingresarComentario"
+            android:hint="Escribe un comentario..."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="30">
+        </EditText>
+
+        <Button
+            android:id="@+id/enviar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            android:hint="Enviar"
+            android:layout_weight="70"/>
+
+
+    </LinearLayout>
+
 
 
 </LinearLayout>

@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bo.com.bienvenido18.android.model.Base;
+import bo.com.bienvenido18.android.model.users.Comentarios;
 import bo.com.bienvenido18.android.model.users.Tramites;
 import bo.com.bienvenido18.android.model.users.UserO;
 import bo.com.bienvenido18.android.model.users.UserP;
@@ -87,4 +88,16 @@ public class MockRepository implements RepositoryImpl {
 
     }*/
     }
+    @Override
+    public LiveData<Base<List<Comentarios>>> getComentarios(String comen) {
+        MutableLiveData<Base<List<Comentarios>>> results = new MutableLiveData<>();
+        String json ="";
+        Type listType = new TypeToken<ArrayList<Comentarios>>() {
+        }.getType();
+        List<Comentarios> uniList = new Gson().fromJson(json, listType);
+        results.postValue(new Base<>(uniList));
+        return null;
+    }
+
+
 }
