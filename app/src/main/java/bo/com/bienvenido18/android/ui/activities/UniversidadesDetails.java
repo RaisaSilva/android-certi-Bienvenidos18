@@ -34,6 +34,9 @@ public class UniversidadesDetails extends AppCompatActivity {
     private ImageView foto;
     private TextView nombre;
     private TextView direc;
+    private TextView telefono;
+    private TextView carreras;
+
     private UniversidadesDetailViewModel viewModel;
     private Gson gson = new Gson();
 
@@ -55,6 +58,8 @@ public class UniversidadesDetails extends AppCompatActivity {
     private void fillUniversidadData(Universidades universidades) {
         this.direc.setText(universidades.getAddress());
         this.nombre.setText(universidades.getDisplayName());
+        this.telefono.setText(universidades.getTelefonos());
+        this.carreras.setText(universidades.getCarreras());
         Picasso.get().load(universidades.getCoverPhoto()).into(foto);
 
     }
@@ -63,6 +68,9 @@ public class UniversidadesDetails extends AppCompatActivity {
         this.foto = findViewById(R.id.imagDetalle);
         this.direc = findViewById(R.id.textoDetalle);
         this.nombre =findViewById(R.id.nombreU);
+        this.telefono =findViewById(R.id.telefonoDetalle);
+        this.carreras =findViewById(R.id.CarrerasDetalle);
+
     }
 
     /*private void initViews() {

@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 import bo.com.bienvenido18.android.model.Base;
+import bo.com.bienvenido18.android.model.users.Comentarios;
 import bo.com.bienvenido18.android.model.users.Tramites;
 import bo.com.bienvenido18.android.model.users.UserO;
 import bo.com.bienvenido18.android.repository.api.ApiRepository;
@@ -25,6 +26,11 @@ public class Repository implements RepositoryImpl {
     @Override
     public LiveData<Base<List<Tramites>>> getTramites(String tram) {
         return ApiRepository.getInstance().getTramites();
+    }
+
+    @Override
+    public LiveData<Base<List<Comentarios>>> getComentarios(String comen) {
+        return null;
     }
 
 

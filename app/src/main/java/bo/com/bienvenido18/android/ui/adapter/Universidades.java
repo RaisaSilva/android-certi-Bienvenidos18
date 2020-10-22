@@ -7,9 +7,26 @@ public class Universidades {
     private String coverPhoto;
     private String displayName; //Bolivian Foods SRL --> Burger King
     private String address;
+    private String telefonos;
+    private String carreras;
+
+    public String getTelefonos() {
+        return telefonos;
+    }
+
+    public void setTelefonos(String telefonos) {
+        this.telefonos = telefonos;
+    }
+
+    public String getCarreras() {
+        return carreras;
+    }
 
     public String getUuid() {
         return uuid;
+    }
+    public void setCarreras(String carreras) {
+        this.carreras = carreras;
     }
 
     public void setUuid(String uuid) {
