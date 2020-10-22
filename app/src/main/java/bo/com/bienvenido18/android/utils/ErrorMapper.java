@@ -7,10 +7,13 @@ public class ErrorMapper {
         switch (errorCode) {
             case Constants.ERROR_EMPTY_VALUES:
                 return "Please fill all de values";
+            case Constants.ERROR_wRONG_PASSWORD:
+                return "La contraseña tiene que tener números";
             case Constants.ERROR_LOGIN:
                 return "Please review your internet connection";
             case Constants.ERROR_INVALID_EMAIL:
                 return "Email or Password incorrect";
+
             default:
                 return "Unknown error";
         }
