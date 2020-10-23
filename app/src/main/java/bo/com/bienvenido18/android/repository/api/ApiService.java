@@ -9,8 +9,17 @@ public class ApiService {
             .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build();
+    private static Retrofit retrofitComen = new Retrofit.Builder()
+            .baseUrl(Constants.BASE_URL_COMENTARIOS)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
 
     public static <S> S createService(Class<S> serviceClass) {
         return retrofit.create(serviceClass);
+
+    }
+    public static <S> S createServiceComen(Class<S> serviceClass) {
+        return retrofitComen.create(serviceClass);
+
     }
 }

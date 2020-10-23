@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData;
 import java.util.List;
 
 import bo.com.bienvenido18.android.model.Base;
+import bo.com.bienvenido18.android.model.users.Comentarios;
 import bo.com.bienvenido18.android.model.users.Tramites;
 import bo.com.bienvenido18.android.utils.Constants;
 import retrofit2.Call;
@@ -17,6 +18,7 @@ public class ApiRepository {
 
     private static ApiRepository instance;
     private TramitesApi tramitesApi;
+    private ComentariosApi comentariosApi;
 
 
     public static ApiRepository getInstance() {
@@ -27,7 +29,9 @@ public class ApiRepository {
     }
 
     public ApiRepository() {
+
         tramitesApi = ApiService.createService(TramitesApi.class);
+        comentariosApi=ApiService.createServiceComen(ComentariosApi.class);
     }
 
     public LiveData<Base<List<Tramites>>> getTramites() {
@@ -48,6 +52,30 @@ public class ApiRepository {
             public void onFailure(Call<List<Tramites>> call, Throwable t) {
                 results.postValue(new Base<>(Constants.ERROR_NO_CONNECTION, new Exception(t)));
             }
+        });
+        return results;
+    }
+    public LiveData<Base<List<Comentarios>>> getComentarios() {
+        MutableLiveData<Base<List<Comentarios>>> results = new MutableLiveData<>();
+
+        comentariosApi.getComentarios(Constants.QUERY_PARAM_ALT_COMENTARIOS).enqueue(new Callback<List<Comentarios>>() {
+            @Override
+            public void onResponse(Call<List<Comentarios>> call, Response<List<Comentarios>> response) {
+                if (response.isSuccessful()) {
+                    results.postValue(new Base<>(response.body()));
+                } else {
+                    results.postValue(new Base<>(Constants.ERROR_SERVER,
+                            new Exception(response.message())));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Comentarios>> call, Throwable t) {
+                results.postValue(new Base<>(Constants.ERROR_NO_CONNECTION, new Exception(t)));
+
+            }
+
+
         });
         return results;
     }

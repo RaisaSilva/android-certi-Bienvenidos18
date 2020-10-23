@@ -30,7 +30,7 @@ public class Repository implements RepositoryImpl {
 
     @Override
     public LiveData<Base<List<Comentarios>>> getComentarios(String comen) {
-        return null;
+        return ApiRepository.getInstance().getComentarios();
     }
 
 
