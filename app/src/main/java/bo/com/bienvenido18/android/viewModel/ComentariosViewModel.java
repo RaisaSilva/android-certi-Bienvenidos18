@@ -5,6 +5,7 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class ComentariosViewModel extends AndroidViewModel {
 
     public ComentariosViewModel(@NonNull Application application) {
         super(application);
-        RepositoryImpl repository = new MockRepository();
+        repository = new MockRepository();
     }
     public LiveData<Base<List<Comentarios>>> getComentarios(String comen) {
         return repository.getComentarios(comen);//

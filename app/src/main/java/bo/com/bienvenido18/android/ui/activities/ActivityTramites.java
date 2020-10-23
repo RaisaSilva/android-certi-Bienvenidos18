@@ -35,7 +35,6 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
     private LinearLayout linearLayout;
     private RecyclerView transRecyclerView;
     private AdapterTramites adapter;
-
     private List<Tramites> tramites = new ArrayList<>();
 
     @Override
@@ -63,6 +62,7 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
                 new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
 
        // transRecyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+
     }
     private void initEvents() {
         adapter.setCallback(this);
@@ -80,7 +80,6 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
 
         viewModel.getTramites("").observe(this, new Observer<Base<List<Tramites>>>() {
 
-
             @Override
             public void onChanged(Base<List<Tramites>> listBase) {
                 if (listBase.isSuccess()) {
@@ -94,7 +93,6 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
             }
         });
     }
-
 
     @Override
     public void OnTramitesClicked(Tramites tramites) {

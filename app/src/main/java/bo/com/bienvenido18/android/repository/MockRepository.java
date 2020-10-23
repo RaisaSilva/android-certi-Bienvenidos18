@@ -91,12 +91,12 @@ public class MockRepository implements RepositoryImpl {
     @Override
     public LiveData<Base<List<Comentarios>>> getComentarios(String comen) {
         MutableLiveData<Base<List<Comentarios>>> results = new MutableLiveData<>();
-        String json ="";
+        String json ="[{\"uuid\":\"1\",\"alias\":\"Nuria\",\"date\":\"10:30 am\",\"comentario\":\"Más información por favor.\"},{\"uuid\":\"2\",\"alias\":\"Raisa\",\"date\":\"13:00 pm\",\"comentario\":\"Saben si tiene tiene otra sucursal???\"},{\"uuid\":\"3\",\"alias\":\"Liz\",\"date\":\"17:24 pm\",\"comentario\":\"Hay que llevar carnet?\"},{\"uuid\":\"4\",\"alias\":\"Benjamin\",\"date\":\"22:00 pm\",\"comentario\":\"De 11:00 a 13:00 no atienden, por si acaso.\"}]";
         Type listType = new TypeToken<ArrayList<Comentarios>>() {
         }.getType();
         List<Comentarios> uniList = new Gson().fromJson(json, listType);
         results.postValue(new Base<>(uniList));
-        return null;
+        return results;
     }
 
 

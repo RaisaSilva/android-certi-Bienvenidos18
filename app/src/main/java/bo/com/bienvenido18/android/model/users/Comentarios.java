@@ -2,9 +2,18 @@ package bo.com.bienvenido18.android.model.users;
 
 public class Comentarios {
 
+    private String uuid;
     private String alias;
     private String date;
     private String comentario;
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
+    }
 
     public String getAlias() {
         return alias;
