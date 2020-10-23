@@ -20,7 +20,7 @@ public class ComentariosViewModel extends AndroidViewModel {
 
     public ComentariosViewModel(@NonNull Application application) {
         super(application);
-        repository = new MockRepository();
+        repository = new MockRepository(application);
     }
     public LiveData<Base<List<Comentarios>>> getComentarios(String comen) {
         return repository.getComentarios(comen);//

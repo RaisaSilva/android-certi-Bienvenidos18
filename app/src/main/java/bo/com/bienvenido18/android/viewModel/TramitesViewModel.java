@@ -11,6 +11,7 @@ import java.util.List;
 import bo.com.bienvenido18.android.model.Base;
 import bo.com.bienvenido18.android.model.users.Tramites;
 import bo.com.bienvenido18.android.repository.MockRepository;
+import bo.com.bienvenido18.android.repository.Repository;
 import bo.com.bienvenido18.android.repository.RepositoryImpl;
 import bo.com.bienvenido18.android.ui.adapter.Universidades;
 
@@ -20,7 +21,7 @@ public class TramitesViewModel extends AndroidViewModel {
 
     public TramitesViewModel(@NonNull Application application) {
         super(application);
-        repository = new MockRepository();
+        repository = new Repository(application);
     }
 
     public LiveData<Base<List<Tramites>>> getTramites(String tram) {

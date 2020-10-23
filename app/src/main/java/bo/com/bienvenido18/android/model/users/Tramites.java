@@ -1,10 +1,21 @@
 package bo.com.bienvenido18.android.model.users;
 
-public class Tramites {
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+@Entity(tableName = "tramites_table")
+public class Tramites {
+    @PrimaryKey
+    @NonNull
+    @ColumnInfo(name = "uuid")
     private String uuid;
+    @ColumnInfo(name = "coverPhoto")
     private String coverPhoto;
+    @ColumnInfo(name = "titlePhoto")
     private String titlePhoto;
+    @ColumnInfo(name = "date")
     private String date;
 
     public String getUuid() {

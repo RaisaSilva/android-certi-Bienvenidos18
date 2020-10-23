@@ -1,5 +1,7 @@
 package bo.com.bienvenido18.android.repository;
 
+import android.app.Application;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
@@ -16,11 +18,16 @@ import bo.com.bienvenido18.android.model.users.Tramites;
 import bo.com.bienvenido18.android.model.users.UserO;
 import bo.com.bienvenido18.android.model.users.UserP;
 import bo.com.bienvenido18.android.repository.api.ApiRepository;
+import bo.com.bienvenido18.android.repository.local.LocalRepository;
 import bo.com.bienvenido18.android.ui.adapter.Universidades;
 import bo.com.bienvenido18.android.utils.Constants;
 import bo.com.bienvenido18.android.utils.Validations;
 
 public class MockRepository implements RepositoryImpl {
+
+    public MockRepository(Application application){
+
+    }
 
     public List<UserO> getFakeUsers() {
         List<UserO> fakeUsers = new ArrayList<>();

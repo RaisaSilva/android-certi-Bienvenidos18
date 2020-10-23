@@ -18,7 +18,7 @@ public class UniversidadesViewModel extends AndroidViewModel {
 
     public UniversidadesViewModel(@NonNull Application application) {
         super(application);
-        repository = new MockRepository();
+        repository = new MockRepository(application);
     }
 
     public LiveData<Base<List<Universidades>>> getUniversidades(String unis) {

@@ -25,7 +25,7 @@ public class LoginTest {
 
     @Before
     public void beforeEach() {
-        repository = new MockRepository();
+        repository = new MockRepository(null);
     }
 
     @Rule
