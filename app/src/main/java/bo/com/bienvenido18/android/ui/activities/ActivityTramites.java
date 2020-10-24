@@ -46,6 +46,7 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
 
         //Injectando el viewModel
         viewModel = new ViewModelProvider(this).get(TramitesViewModel.class);
+        getSupportActionBar().hide();
 
         initViews();
         initEvents();

@@ -46,6 +46,7 @@ public class UniversidadesDetails extends AppCompatActivity {
         setContentView(R.layout.universidad_details_layout);
         context = this;
         viewModel = new ViewModelProvider(this).get(UniversidadesDetailViewModel.class);
+        getSupportActionBar().hide();
         Universidades universidades = this.gson.fromJson(getIntent().
                 getStringExtra(Constants.KEY_STARTUP_SELECTED), Universidades.class);
 

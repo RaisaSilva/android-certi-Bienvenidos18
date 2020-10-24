@@ -21,10 +21,11 @@
         android:layout_height="30dp"
         android:layout_weight="50"
         android:text="Alias"
-        android:background="#66bfbf"
+        android:background="#726a95"
         android:gravity="center_horizontal"
         android:textStyle="bold"
-        android:textSize="20dp"/>
+        android:textSize="20dp"
+        />
 
             <TextView
                 android:id="@+id/date"
@@ -32,7 +33,7 @@
                 android:layout_height="30dp"
                 android:layout_weight="50"
                 android:text="Date"
-                android:background="#66bfbf"
+                android:background="#709fb0"
                 android:gravity="center_horizontal"
                 android:textStyle="bold"
                 android:textSize="20dp"/>
@@ -42,11 +43,11 @@
     <TextView
         android:id="@+id/comentario"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="70dp"
         android:text="Comentario Prueba"
-        android:background="#66bfbf"
+        android:background="#a0c1b8"
         android:gravity="center_horizontal"
-        android:textSize="@dimen/space_xl"
+        android:textSize="15dp"
         android:padding="@dimen/space_xl"
         android:textStyle="bold" />
 

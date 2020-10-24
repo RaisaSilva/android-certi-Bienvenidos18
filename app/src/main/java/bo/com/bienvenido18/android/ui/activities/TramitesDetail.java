@@ -15,6 +15,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -39,6 +40,7 @@ import bo.com.bienvenido18.android.viewModel.ComentariosViewModel;
 import bo.com.bienvenido18.android.viewModel.TramiteDetailViewModel;
 import bo.com.bienvenido18.android.viewModel.UniversidadesDetailViewModel;
 
+
 public class TramitesDetail extends AppCompatActivity implements ComentariosCallback {
 
     private static final String LOG = TramitesDetail.class.getSimpleName();
@@ -54,6 +56,7 @@ public class TramitesDetail extends AppCompatActivity implements ComentariosCall
     private List<Comentarios> comentarioslist =new ArrayList<>();
 
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +64,7 @@ public class TramitesDetail extends AppCompatActivity implements ComentariosCall
         context = this;
         viewModel = new ViewModelProvider(this).get(TramiteDetailViewModel.class);
         comentariosViewModel = new ViewModelProvider(this).get(ComentariosViewModel.class);
+        getSupportActionBar().hide();
         Tramites tramites = this.gson.fromJson(getIntent().
 
                 getStringExtra(Constants.KEY_STARTUP_SELECTED), Tramites.class);
@@ -114,6 +118,7 @@ public class TramitesDetail extends AppCompatActivity implements ComentariosCall
         recyclerViewComentario.setAdapter(adapterTramitesComentarios);
         recyclerViewComentario.setLayoutManager(
                 new LinearLayoutManager(context,RecyclerView.VERTICAL,false));
+        recyclerViewComentario.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
 
     }
 

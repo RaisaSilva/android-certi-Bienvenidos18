@@ -51,6 +51,7 @@ public class ActivityU extends AppCompatActivity implements UniversidadesCallbac
 
         //Injectando el viewModel
         viewModel = new ViewModelProvider(this).get(UniversidadesViewModel.class);
+        getSupportActionBar().hide();
 
         initViews();
         initEvents();
