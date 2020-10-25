@@ -23,4 +23,5 @@ public class Constants {
     public static final String QUERY_PARAM_ALT_COMENTARIOS = "media";
 
 
+    public static final int ERROR_wRONG_PASSWORD = 2002;
 }

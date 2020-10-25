@@ -11,6 +11,8 @@ public class ErrorMapper {
                 return "Please review your internet connection";
             case Constants.ERROR_INVALID_EMAIL:
                 return "Email or Password incorrect";
+            case Constants.ERROR_wRONG_PASSWORD:
+                return "La contraseña tiene que tener números";
             default:
                 return "Unknown error";
         }

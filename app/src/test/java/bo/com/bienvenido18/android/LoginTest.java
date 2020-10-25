@@ -91,5 +91,17 @@ public class LoginTest {
             assertEquals(Constants.ERROR_EMPTY_VALUES, userBase.getErrorCode());
         });
     }
+    @Test
+    public void loginFailedInvalidPassword() {
+        String email = "nuria.michel@gmail.com";
+        String password = "contrasena"; //tiene que tener numeros
+        LiveData<Base<UserO>> result = repository.loginWithEmailPassword(email, password);
+        assertNotNull(result);
+        result.observeForever(userBase -> {
+            //userBase: Base<User>
+            assertFalse(userBase.isSuccess());
+            assertEquals(Constants.ERROR_wRONG_PASSWORD, userBase.getErrorCode());
+        });
+    }
 }
 

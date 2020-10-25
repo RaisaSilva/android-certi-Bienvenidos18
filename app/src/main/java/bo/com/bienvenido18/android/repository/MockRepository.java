@@ -55,6 +55,10 @@ public class MockRepository implements RepositoryImpl {
             results.postValue(new Base(Constants.ERROR_INVALID_EMAIL, null));
             return results;
         }
+        if (!Validations.isValidPasswoord(password)) {
+            results.postValue(new Base(Constants.ERROR_wRONG_PASSWORD, null));
+            return results;
+        }
 
 
         for (UserO user : getFakeUsers()) {
