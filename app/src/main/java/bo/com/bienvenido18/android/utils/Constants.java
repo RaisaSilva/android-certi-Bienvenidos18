@@ -16,7 +16,7 @@ public class Constants {
     public static final String KEY_STARTUP_SELECTED = "startupSelected";
     public static final String BASE_URL = "https://firebasestorage.googleapis.com/v0/b/bienvenido18-15d9f.appspot.com/o/";
     public static final String BASE_URL_COMENTARIOS = "https://firebasestorage.googleapis.com/v0/b/b-18comentarios.appspot.com/o/";
-    public static final String RESOURCE_TRAMITES = "tramites.json";
+    public static final String RESOURCE_TRAMITES = "nuevo_tramites.json";
     public static final String RESOURCE_COMENTARIOS = "Json_Comentarios.json";
 
     public static final String QUERY_PARAM_ALT = "media";

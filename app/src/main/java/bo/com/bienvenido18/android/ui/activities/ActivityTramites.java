@@ -4,7 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,9 +17,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.gson.Gson;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import bo.com.bienvenido18.android.R;
 import bo.com.bienvenido18.android.model.Base;
@@ -36,6 +41,7 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
     private RecyclerView transRecyclerView;
     private AdapterTramites adapter;
     private List<Tramites> tramites = new ArrayList<>();
+    private LinearLayout mapaTramitesInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,11 +62,14 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
     private void initViews() {
         linearLayout = findViewById(R.id.layoutTramite);
         transRecyclerView = findViewById(R.id.RecyclerIdTramites);
+        //mapaTramitesInfo=findViewById(R.id.mapaTramitesInfo);
 
         adapter = new AdapterTramites(tramites, context);
         transRecyclerView.setAdapter(adapter);
         transRecyclerView.setLayoutManager(
                 new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
+
+
 
        // transRecyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
 
@@ -91,9 +100,48 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
                     Toast.makeText(context, ErrorMapper.getError(context, listBase.getErrorCode()),
                             Toast.LENGTH_SHORT).show();
                 }
+
+
+
+
             }
         });
     }
+
+    private void addMapaTramitesInfo(Map<String, String> mapaInfo) {
+        if (mapaInfo != null) {
+            for (Map.Entry<String, String> entry : mapaInfo.entrySet()) {
+                TextView tvKey = new TextView(context);
+                tvKey.setLayoutParams(new LinearLayout.LayoutParams(0,
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        20));
+                tvKey.setTextSize(11);
+                tvKey.setText(entry.getKey());
+
+                TextView tvValue = new TextView(context);
+                tvValue.setLayoutParams(new LinearLayout.LayoutParams(0,
+                        ViewGroup.LayoutParams.WRAP_CONTENT,
+                        30));
+                tvValue.setTextSize(11);
+                tvValue.setTextColor(getResources().getColor(R.color.colorAccent));
+                tvValue.setText(entry.getValue());
+
+                LinearLayout llh = new LinearLayout(context);
+                llh.setOrientation(LinearLayout.HORIZONTAL);
+                llh.setPadding(20, 20, 20, 20);
+                llh.addView(tvKey);
+                llh.addView(tvValue);
+
+                mapaTramitesInfo.addView(llh);
+
+                View line = new View(context);
+                line.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 2));
+                line.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                mapaTramitesInfo.addView(line);
+            }
+        }
+    }
+
 
     @Override
     public void OnTramitesClicked(Tramites tramites) {
@@ -102,6 +150,7 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
         startActivity(intent);
 
     }
+
 }
 
 

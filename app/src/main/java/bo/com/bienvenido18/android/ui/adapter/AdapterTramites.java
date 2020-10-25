@@ -1,16 +1,21 @@
 package bo.com.bienvenido18.android.ui.adapter;
 
 import android.content.Context;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+import java.util.Map;
 
 import bo.com.bienvenido18.android.R;
 import bo.com.bienvenido18.android.model.users.Tramites;
@@ -39,12 +44,17 @@ public class AdapterTramites extends RecyclerView.Adapter<ViewHolderTramites>{
         return new ViewHolderTramites(itemView);
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull ViewHolderTramites holder, int position) {
         Tramites tramite = tramites.get(position);
         holder.nameTextView.setText(tramite.getTitlePhoto());
+        holder.listaTramites.setText(tramite.getListaTramitesInfo());
+        //holder.listaTramites.addMapaTramitesInfo(tramite.getMapaTramitesInfo());
+        //addMapaTramitesInfo(tramite.getMapaTramitesInfo());
 
         Picasso.get().load(tramite.getCoverPhoto()).into(holder.coverImageView);
+
         holder.itemView.setOnClickListener(view -> {
             if (callback != null) {
                 callback.OnTramitesClicked(tramite);
