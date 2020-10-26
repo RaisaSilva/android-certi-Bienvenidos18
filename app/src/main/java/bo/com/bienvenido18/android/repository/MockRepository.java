@@ -14,6 +14,7 @@ import java.util.List;
 
 import bo.com.bienvenido18.android.model.Base;
 import bo.com.bienvenido18.android.model.users.Comentarios;
+import bo.com.bienvenido18.android.model.users.Sabias;
 import bo.com.bienvenido18.android.model.users.Tramites;
 import bo.com.bienvenido18.android.model.users.UserO;
 import bo.com.bienvenido18.android.model.users.UserP;
@@ -105,6 +106,11 @@ public class MockRepository implements RepositoryImpl {
         List<Comentarios> uniList = new Gson().fromJson(json, listType);
         results.postValue(new Base<>(uniList));
         return results;*/
+    }
+
+    @Override
+    public LiveData<Base<List<Sabias>>> getSabias(String sabia) {
+        return ApiRepository.getInstance().getSabias();
     }
 
 

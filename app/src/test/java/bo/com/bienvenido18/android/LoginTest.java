@@ -43,7 +43,7 @@ public class LoginTest {
             assertNull(userBase.getException());//No Errors
             assertEquals(UserProfile.USERO, userBase.getData().getProfile());
             assertEquals("1", userBase.getData().getUuid());
-            assertEquals(" Hola Nuri", userBase.getData().getDisplayName());
+            assertEquals("Nuria Michel", userBase.getData().getDisplayName());
         });
     }
 

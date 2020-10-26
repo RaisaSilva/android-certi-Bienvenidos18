@@ -7,6 +7,7 @@ import java.util.List;
 
 import bo.com.bienvenido18.android.model.Base;
 import bo.com.bienvenido18.android.model.users.Comentarios;
+import bo.com.bienvenido18.android.model.users.Sabias;
 import bo.com.bienvenido18.android.model.users.Tramites;
 import bo.com.bienvenido18.android.utils.Constants;
 import retrofit2.Call;
@@ -19,6 +20,8 @@ public class ApiRepository {
     private static ApiRepository instance;
     private TramitesApi tramitesApi;
     private ComentariosApi comentariosApi;
+    private SabiasApi sabiasApi;
+
 
 
     public static ApiRepository getInstance() {
@@ -32,6 +35,7 @@ public class ApiRepository {
 
         tramitesApi = ApiService.createService(TramitesApi.class);
         comentariosApi=ApiService.createServiceComen(ComentariosApi.class);
+        sabiasApi=ApiService.createServiceSabias(SabiasApi.class);
     }
 
     public LiveData<Base<List<Tramites>>> getTramites() {
@@ -55,6 +59,9 @@ public class ApiRepository {
         });
         return results;
     }
+
+
+
     public LiveData<Base<List<Comentarios>>> getComentarios() {
         MutableLiveData<Base<List<Comentarios>>> results = new MutableLiveData<>();
 
@@ -79,6 +86,34 @@ public class ApiRepository {
         });
         return results;
     }
+
+    public LiveData<Base<List<Sabias>>> getSabias() {
+        MutableLiveData<Base<List<Sabias>>> results = new MutableLiveData<>();
+
+        sabiasApi.getSabias(Constants.QUERY_PARAM_ALT_COMENTARIOS).enqueue(new Callback<List<Sabias>>() {
+            @Override
+            public void onResponse(Call<List<Sabias>> call, Response<List<Sabias>> response) {
+                if (response.isSuccessful()) {
+                    results.postValue(new Base<>(response.body()));
+                } else {
+                    results.postValue(new Base<>(Constants.ERROR_SERVER,
+                            new Exception(response.message())));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Sabias>> call, Throwable t) {
+                results.postValue(new Base<>(Constants.ERROR_NO_CONNECTION, new Exception(t)));
+
+            }
+
+
+        });
+        return results;
+    }
+
+
+
 
 }
 

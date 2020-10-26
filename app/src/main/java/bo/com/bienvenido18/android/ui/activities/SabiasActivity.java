@@ -4,29 +4,49 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
 import com.wajahatkarim3.easyflipviewpager.CardFlipPageTransformer;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import bo.com.bienvenido18.android.R;
+import bo.com.bienvenido18.android.model.Base;
+import bo.com.bienvenido18.android.model.users.Sabias;
+import bo.com.bienvenido18.android.model.users.Tramites;
+import bo.com.bienvenido18.android.repository.api.ApiRepository;
+import bo.com.bienvenido18.android.repository.api.SabiasApi;
+import bo.com.bienvenido18.android.ui.adapter.Universidades;
 import bo.com.bienvenido18.android.ui.fragments.sabiasCardFragment;
+import bo.com.bienvenido18.android.utils.ErrorMapper;
+import bo.com.bienvenido18.android.viewModel.SabiasViewModel;
+import bo.com.bienvenido18.android.viewModel.UniversidadesViewModel;
 import me.relex.circleindicator.CircleIndicator;
+
+import static bo.com.bienvenido18.android.ui.activities.SabiasActivity.sabiasPagerAdapter.*;
 
 public class SabiasActivity extends AppCompatActivity {
 
     ViewPager sabiasViewPager;
     private sabiasPagerAdapter pagerAdapter;
-
+    private SabiasViewModel viewModel;
+    private List<Sabias> sabias = new ArrayList<>();
+    Context con;
 
 
     @Override
@@ -37,6 +57,10 @@ public class SabiasActivity extends AppCompatActivity {
             this.getSupportActionBar().hide();
         } catch (NullPointerException e) {
         }
+
+
+        //Injectando el viewModel
+        viewModel = new ViewModelProvider(this).get(SabiasViewModel.class);
 
         setContentView(R.layout.activity_sabias);
 
@@ -53,6 +77,7 @@ public class SabiasActivity extends AppCompatActivity {
 
         indicator = (CircleIndicator) findViewById(R.id.indicator);
         indicator.setViewPager(sabiasViewPager);
+        //subscribeToData();
 
     }
 
@@ -60,6 +85,7 @@ public class SabiasActivity extends AppCompatActivity {
         Context context;
         LayoutInflater mLayoutInflater;
         ArrayList pages = new ArrayList<>();
+
 
         public sabiasPagerAdapter(Context context) {
             this.context = context;
@@ -69,7 +95,10 @@ public class SabiasActivity extends AppCompatActivity {
             pages.add(new Object());
             pages.add(new Object());
 
+
         }
+
+
 
         @Override
         public int getCount() {
@@ -95,31 +124,47 @@ public class SabiasActivity extends AppCompatActivity {
                     } else {
                         sabiasViewPager.setCurrentItem(0, true);
                     }
-                    /*
-                    sabiasCardFragment frag =  sabiasCardFragment.newInstance("Hola dd", "Benjamin dd", R.color.design_default_color_background);
-                    FragmentManager manager = getSupportFragmentManager();
-                    FragmentTransaction transaction = manager.beginTransaction();
-                    transaction.add(R.id.cardViewPager, frag);
-                    transaction.commit();
 
-                     */
                 }
             });
 
 
 
 
-            String[] sides = {"https://i.imgur.com/BPDdsjx.png","https://i.imgur.com/ycTTTjw.png","https://i.imgur.com/HmXO88E.png"};
+            String[] sides = {"https://i.imgur.com/BPDdsjx.png", "https://i.imgur.com/ycTTTjw.png", "https://i.imgur.com/HmXO88E.png"};
+
             Glide.with(context).load(sides[position]).into(imgCardSide);
 
             container.addView(rootView);
             return rootView;
 
         }
+
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
             container.removeView((View) object);
         }
 
+
     }
+
+    private void subscribeToData() {
+        viewModel.getSabias("").observe(this, listBase -> {
+            //onChanged(Base<List<Posts>> listBase)
+            //T1, Tn: Firebase
+            if (listBase.isSuccess()) {
+                sabias = listBase.getData();
+
+            } else {
+                Toast.makeText(con, ErrorMapper.getError(con, listBase.getErrorCode()),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
 }
+
+
+
+

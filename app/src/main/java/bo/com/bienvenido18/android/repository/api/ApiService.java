@@ -13,6 +13,15 @@ public class ApiService {
             .baseUrl(Constants.BASE_URL_COMENTARIOS)
             .addConverterFactory(GsonConverterFactory.create())
             .build();
+    private static Retrofit retrofitSabias = new Retrofit.Builder()
+            .baseUrl(Constants.BASE_URL_SABIAS)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
+
+    public static <S> S createServiceSabias(Class<S> serviceClass) {
+        return retrofitSabias.create(serviceClass);
+
+    }
 
     public static <S> S createService(Class<S> serviceClass) {
         return retrofit.create(serviceClass);
