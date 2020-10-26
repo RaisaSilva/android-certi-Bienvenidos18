@@ -9,6 +9,15 @@ public class Universidades {
     private String address;
     private String telefonos;
     private String carreras;
+    private String links;
+
+    public String getLinks() {
+        return links;
+    }
+
+    public void setLinks(String links) {
+        this.links = links;
+    }
 
     public String getTelefonos() {
         return telefonos;

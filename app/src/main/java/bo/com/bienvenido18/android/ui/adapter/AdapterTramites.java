@@ -49,9 +49,8 @@ public class AdapterTramites extends RecyclerView.Adapter<ViewHolderTramites>{
     public void onBindViewHolder(@NonNull ViewHolderTramites holder, int position) {
         Tramites tramite = tramites.get(position);
         holder.nameTextView.setText(tramite.getTitlePhoto());
-        holder.listaTramites.setText(tramite.getListaTramitesInfo());
-        //holder.listaTramites.addMapaTramitesInfo(tramite.getMapaTramitesInfo());
-        //addMapaTramitesInfo(tramite.getMapaTramitesInfo());
+        //holder.listaTramites.setText(tramite.getListaTramitesInfo());
+
 
         Picasso.get().load(tramite.getCoverPhoto()).into(holder.coverImageView);
 

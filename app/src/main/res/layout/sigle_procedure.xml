@@ -10,39 +10,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="title"
-        android:layout_marginLeft="30dp"
-        android:gravity="center"
+        android:layout_marginLeft="5dp"
+        android:layout_gravity="center_horizontal"
         android:id="@+id/title_view"
         android:textSize="30dp"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+
         <ImageButton
             android:id="@+id/procedure_view"
-            android:layout_width="150dp"
+            android:layout_width="200dp"
             android:layout_height="150dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="25dp"
             android:background="@drawable/ic_launcher_background"
             android:scaleType="fitXY"
             />
 
-        <TextView
+      <!---  <TextView
             android:id="@+id/mapaTramitesInfo"
             android:layout_width="match_parent"
             android:layout_height="157dp"
             android:orientation="vertical"
             android:text="info"
             android:textSize="9dp" />
-
-
-    </LinearLayout>
-
-
-
-
+            -->
 
 
 </LinearLayout>
+
+
+
+
+
+
+

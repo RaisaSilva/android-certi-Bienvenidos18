@@ -5,11 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:weightSum="100"
+    android:background="#ffd57e"
     android:id="@+id/layout_detail"
     tools:context=".ui.activities.UniversidadesDetails">
     <ImageView
         android:id="@+id/imagDetalle"
         android:layout_width="match_parent"
+        android:adjustViewBounds="true"
         android:layout_height="0dp"
         android:layout_weight="70"
         android:scaleType="centerCrop"
@@ -19,35 +21,46 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nombre Universidad"
+        android:background="#f0a500"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:textSize="30dp"
+        android:textColor="#000"/>
+
+    <TextView
+        android:id="@+id/linkDetalle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="link"
+        android:background="#ffd57e"
         android:textSize="20dp"
         android:textColor="#000"/>
     <TextView
         android:id="@+id/textoDetalle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
+        android:background="#ffd57e"
         android:text="detalles"
         android:textSize="20dp"
         android:textColor="#000"/>
     <TextView
         android:id="@+id/telefonoDetalle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
+        android:background="#ffd57e"
         android:text="detalles"
         android:textSize="20dp"
         android:textColor="#000"/>
     <TextView
         android:id="@+id/CarrerasDetalle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
+        android:background="#ffd57e"
         android:text="detalles"
         android:textSize="20dp"
         android:textColor="#000"/>
+
 
 
 

@@ -19,6 +19,6 @@ public class ViewHolderTramites extends RecyclerView.ViewHolder {
         super(itemView);
         coverImageView = itemView.findViewById(R.id.procedure_view);
         nameTextView = itemView.findViewById(R.id.title_view);
-        listaTramites= itemView.findViewById(R.id.mapaTramitesInfo);
+       // listaTramites= itemView.findViewById(R.id.mapaTramitesInfo);
     }
 }

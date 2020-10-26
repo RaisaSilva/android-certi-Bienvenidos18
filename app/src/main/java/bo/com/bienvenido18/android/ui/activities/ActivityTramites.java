@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -41,7 +42,7 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
     private RecyclerView transRecyclerView;
     private AdapterTramites adapter;
     private List<Tramites> tramites = new ArrayList<>();
-    private LinearLayout mapaTramitesInfo;
+   // private LinearLayout mapaTramitesInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +72,7 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
 
 
 
-       // transRecyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+        transRecyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
 
     }
     private void initEvents() {
@@ -108,39 +109,6 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
         });
     }
 
-    private void addMapaTramitesInfo(Map<String, String> mapaInfo) {
-        if (mapaInfo != null) {
-            for (Map.Entry<String, String> entry : mapaInfo.entrySet()) {
-                TextView tvKey = new TextView(context);
-                tvKey.setLayoutParams(new LinearLayout.LayoutParams(0,
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        20));
-                tvKey.setTextSize(11);
-                tvKey.setText(entry.getKey());
-
-                TextView tvValue = new TextView(context);
-                tvValue.setLayoutParams(new LinearLayout.LayoutParams(0,
-                        ViewGroup.LayoutParams.WRAP_CONTENT,
-                        30));
-                tvValue.setTextSize(11);
-                tvValue.setTextColor(getResources().getColor(R.color.colorAccent));
-                tvValue.setText(entry.getValue());
-
-                LinearLayout llh = new LinearLayout(context);
-                llh.setOrientation(LinearLayout.HORIZONTAL);
-                llh.setPadding(20, 20, 20, 20);
-                llh.addView(tvKey);
-                llh.addView(tvValue);
-
-                mapaTramitesInfo.addView(llh);
-
-                View line = new View(context);
-                line.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 2));
-                line.setBackgroundColor(getResources().getColor(R.color.colorAccent));
-                mapaTramitesInfo.addView(line);
-            }
-        }
-    }
 
 
     @Override
