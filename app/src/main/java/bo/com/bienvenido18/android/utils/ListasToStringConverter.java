@@ -19,4 +19,5 @@ public class ListasToStringConverter {
         }.getType();
         return new Gson().fromJson(string, listaType);
     }
+    //merge
 }
