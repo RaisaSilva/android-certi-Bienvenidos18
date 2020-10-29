@@ -10,6 +10,8 @@
     tools:context=".ui.activities.ActivityTramites"
     android:orientation="vertical">
 
+
+
     <TextView
         android:id="@+id/tramitesList"
         android:layout_width="match_parent"
@@ -21,10 +23,21 @@
         android:textSize="@dimen/space_xxl"
         android:textStyle="bold" />
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RecyclerIdTramites"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-         />
+        android:layout_height="432dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/nuevoTra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:clickable="true"
+        tools:srcCompat="@tools:sample/avatars" />
+
 
 </LinearLayout>

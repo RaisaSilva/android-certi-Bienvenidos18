@@ -1,6 +1,7 @@
 package bo.com.bienvenido18.android.repository;
 
 import android.app.Application;
+import android.net.Uri;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bo.com.bienvenido18.android.model.Base;
+import bo.com.bienvenido18.android.model.PostTramite;
 import bo.com.bienvenido18.android.model.users.Comentarios;
 import bo.com.bienvenido18.android.model.users.Tramites;
 import bo.com.bienvenido18.android.model.users.UserO;
@@ -109,6 +111,16 @@ public class MockRepository implements RepositoryImpl {
         List<Comentarios> uniList = new Gson().fromJson(json, listType);
         results.postValue(new Base<>(uniList));
         return results;*/
+    }
+
+    @Override
+    public LiveData<Base<String>> addPostToTramite(String uuidTramite, PostTramite postTramite, Uri image) {
+        return null;
+    }
+
+    @Override
+    public LiveData<Base<List<PostTramite>>> observeTramitePost(String uuiTramite) {
+        return null;
     }
 
 

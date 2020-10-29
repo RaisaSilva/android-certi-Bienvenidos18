@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
@@ -26,6 +27,7 @@ import java.util.Map;
 
 import bo.com.bienvenido18.android.R;
 import bo.com.bienvenido18.android.model.Base;
+import bo.com.bienvenido18.android.model.PostTramite;
 import bo.com.bienvenido18.android.model.users.Tramites;
 import bo.com.bienvenido18.android.ui.adapter.AdapterTramites;
 import bo.com.bienvenido18.android.ui.callBack.TramitesCallback;
@@ -42,7 +44,9 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
     private RecyclerView transRecyclerView;
     private AdapterTramites adapter;
     private List<Tramites> tramites = new ArrayList<>();
-   // private LinearLayout mapaTramitesInfo;
+    private FloatingActionButton nuevoT;
+    private PostTramite postTselected;
+    // private LinearLayout mapaTramitesInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,13 +74,20 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
         transRecyclerView.setLayoutManager(
                 new LinearLayoutManager(context, RecyclerView.VERTICAL, false));
 
-
-
         transRecyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+        nuevoT = findViewById(R.id.nuevoTra);
 
     }
     private void initEvents() {
         adapter.setCallback(this);
+        nuevoT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, CreatePostTramitesActivity.class);
+                intent.putExtra(Constants.KEY_TRAMITE_UUID_SELECTED, postTselected.getUuid());
+                startActivity(intent);
+            }
+        });
     }
 
     private void getIntentValues() {
@@ -120,5 +131,3 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
     }
 
 }
-
-
