@@ -24,7 +24,7 @@ import bo.com.bienvenido18.android.ui.callBack.UniversidadesCallback;
 import bo.com.bienvenido18.android.ui.viewHolder.ViewHolderTramites;
 import bo.com.bienvenido18.android.ui.viewHolder.ViewHolderU;
 
-public class AdapterTramites extends RecyclerView.Adapter<ViewHolderTramites>{
+public class AdapterTramites extends RecyclerView.Adapter<ViewHolderTramites> {
 
     private List<Tramites> tramites;
     private LayoutInflater inflater;
@@ -32,7 +32,7 @@ public class AdapterTramites extends RecyclerView.Adapter<ViewHolderTramites>{
 
     public AdapterTramites(List<Tramites> tramites, Context context) {
         this.tramites = tramites;
-        this.inflater= LayoutInflater.from(context);
+        this.inflater = LayoutInflater.from(context);
 
 
     }
@@ -49,24 +49,33 @@ public class AdapterTramites extends RecyclerView.Adapter<ViewHolderTramites>{
     public void onBindViewHolder(@NonNull ViewHolderTramites holder, int position) {
         Tramites tramite = tramites.get(position);
         holder.nameTextView.setText(tramite.getTitlePhoto());
-        //holder.listaTramites.setText(tramite.getListaTramitesInfo());
 
+        Map<String, String> mapaTramitesInfo = tramite.getMapaTramitesInfo();
+        if (mapaTramitesInfo.containsKey("Plataforma")) {
+            holder.plataformaTextView.setText(mapaTramitesInfo.get("Plataforma"));
+        }
+
+        if (mapaTramitesInfo.containsKey("Más de una sucursal?")) {
+            holder.sucursalesTextView.setText(mapaTramitesInfo.get("Más de una sucursal?"));
+        }
 
         Picasso.get().load(tramite.getCoverPhoto()).into(holder.coverImageView);
 
-        holder.itemView.setOnClickListener(view -> {
+        View.OnClickListener click = view -> {
             if (callback != null) {
                 callback.OnTramitesClicked(tramite);
             }
-        });
+        };
 
-
+        holder.itemView.setOnClickListener(click);
+        holder.coverImageView.setOnClickListener(click);
     }
 
     @Override
     public int getItemCount() {
         return tramites.size();
     }
+
     public void updateItems(List<Tramites> tramites) {
         this.tramites = tramites;
         notifyDataSetChanged();

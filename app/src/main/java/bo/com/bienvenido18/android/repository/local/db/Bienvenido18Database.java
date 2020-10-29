@@ -9,10 +9,10 @@ import androidx.room.TypeConverters;
 
 import bo.com.bienvenido18.android.model.users.Tramites;
 import bo.com.bienvenido18.android.repository.local.dao.TramitesDao;
-import bo.com.bienvenido18.android.utils.ListasToStringConverter;
+import bo.com.bienvenido18.android.utils.MapToStringConverter;
 
 @Database(entities = {Tramites.class}, version = 1)
-@TypeConverters(ListasToStringConverter.class)
+@TypeConverters(MapToStringConverter.class)
 public abstract class Bienvenido18Database extends RoomDatabase {
 
     private static  volatile Bienvenido18Database INSTANCE;

@@ -13,12 +13,14 @@ import bo.com.bienvenido18.android.R;
 public class ViewHolderTramites extends RecyclerView.ViewHolder {
     public ImageView coverImageView;
     public TextView nameTextView;
-    public TextView listaTramites;
+    public TextView plataformaTextView;
+    public TextView sucursalesTextView;
 
     public ViewHolderTramites(@NonNull View itemView) {
         super(itemView);
         coverImageView = itemView.findViewById(R.id.procedure_view);
         nameTextView = itemView.findViewById(R.id.title_view);
-       // listaTramites= itemView.findViewById(R.id.mapaTramitesInfo);
+        plataformaTextView = itemView.findViewById(R.id.plataformaTextView);
+        sucursalesTextView = itemView.findViewById(R.id.sucursalesTextView);
     }
 }

@@ -19,7 +19,7 @@ import bo.com.bienvenido18.android.ui.adapter.Universidades;
 public class Repository implements RepositoryImpl {
     private LocalRepository local;
 
-    public Repository(Application application){
+    public Repository(Application application) {
         local = new LocalRepository(application);
     }
 
@@ -56,7 +56,7 @@ public class Repository implements RepositoryImpl {
                     local.update(listBase.getData());
                 }
             }
-            });
+        });
 
         return results;
     }

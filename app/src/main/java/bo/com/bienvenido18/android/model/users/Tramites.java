@@ -21,10 +21,9 @@ public class Tramites {
     private String titlePhoto;
     @ColumnInfo(name = "date")
     private String date;
-    //@ColumnInfo(name = "mapaTramitesInfo")
-    @Ignore
-    //private Map<String, String> mapaTramitesInfo;
-    private String listaTramitesInfo;
+
+    @ColumnInfo(name = "mapaTramitesInfo")
+    private Map<String, String> mapaTramitesInfo;
 
     public String getUuid() {
         return uuid;
@@ -58,14 +57,15 @@ public class Tramites {
         this.date = date;
     }
 
-    public String getListaTramitesInfo() {
-        return listaTramitesInfo;
+    public Map<String, String> getMapaTramitesInfo() {
+        return mapaTramitesInfo;
     }
 
-    public void setListaTramitesInfo(String listaTramitesInfo) {
-        this.listaTramitesInfo = listaTramitesInfo;
+    public void setMapaTramitesInfo(Map<String, String> mapaTramitesInfo) {
+        this.mapaTramitesInfo = mapaTramitesInfo;
     }
-/*public List<String> getListaTramitesInfo() {
+
+    /*public List<String> getListaTramitesInfo() {
         return listaTramitesInfo;
     }
 
