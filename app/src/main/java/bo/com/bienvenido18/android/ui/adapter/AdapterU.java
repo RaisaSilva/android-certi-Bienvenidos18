@@ -19,9 +19,7 @@ import bo.com.bienvenido18.android.ui.viewHolder.ViewHolderU;
 public class AdapterU  extends RecyclerView.Adapter<ViewHolderU> {
     private List<Universidades> universidades;
     private LayoutInflater inflater;
-
     private UniversidadesCallback callback;
-
 
 
 

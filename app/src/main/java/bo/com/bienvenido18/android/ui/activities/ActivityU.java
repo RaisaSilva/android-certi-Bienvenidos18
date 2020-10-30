@@ -36,7 +36,6 @@ public class ActivityU extends AppCompatActivity implements UniversidadesCallbac
     private LinearLayout parentLinearLayout;
     private RecyclerView unisRecyclerView;
     private AdapterU adapter;
-
     private List<Universidades> universidades = new ArrayList<>();
 
 
@@ -95,7 +94,7 @@ public class ActivityU extends AppCompatActivity implements UniversidadesCallbac
                 if (listBase.isSuccess()) {
                     universidades = listBase.getData();
                     adapter.updateItems(universidades);
-                    Log.e("getStartups", new Gson().toJson(listBase));
+                    Log.e("getUnis", new Gson().toJson(listBase));
                 } else {
                     Toast.makeText(context, ErrorMapper.getError(context, listBase.getErrorCode()),
                             Toast.LENGTH_SHORT).show();

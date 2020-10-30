@@ -5,7 +5,7 @@ import java.util.List;
 public class Universidades {
     private String uuid;
     private String coverPhoto;
-    private String displayName; //Bolivian Foods SRL --> Burger King
+    private String displayName;
     private String address;
     private String telefonos;
     private String carreras;
