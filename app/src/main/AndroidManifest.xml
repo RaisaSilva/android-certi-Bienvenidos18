@@ -29,6 +29,9 @@
         </activity>
         <activity android:name=".ui.activities.UniversidadesDetails" />
         <activity android:name=".ui.activities.TramitesDetail"></activity>
+        <activity android:name=".ui.activities.ActivityUCocha" />
+        <activity android:name=".ui.activities.CochaDetails" />
+        <activity android:name=".ui.activities.menuCuidades" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

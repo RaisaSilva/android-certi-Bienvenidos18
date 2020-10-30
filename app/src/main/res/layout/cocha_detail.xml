@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:weightSum="100"
+    android:background="#f4abc4"
+    android:id="@+id/layout_detail"
+    tools:context=".ui.activities.CochaDetails">
+    <ImageView
+        android:id="@+id/imagDetalleCocha"
+        android:layout_width="match_parent"
+        android:adjustViewBounds="true"
+        android:layout_height="0dp"
+        android:layout_weight="70"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"/>
+    <TextView
+        android:id="@+id/nombreUCocha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre"
+        android:background="#fa7f72"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:textSize="30dp"
+        android:textColor="#000"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Link"
+        android:textSize="20dp"
+        android:textColor="#000"/>
+
+
+    <TextView
+        android:id="@+id/linkDetalleCocha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Link"
+        android:textSize="20dp"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/textoDetalleCocha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="detalles"
+        android:textSize="20dp"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/telefonoDetalleCocha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="detalles"
+        android:textSize="20dp"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/CarrerasDetalleCocha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="detalles"
+        android:textSize="20dp"
+        android:textColor="#000"/>
+
+</LinearLayout>

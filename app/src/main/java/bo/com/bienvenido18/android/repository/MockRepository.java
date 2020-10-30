@@ -17,6 +17,7 @@ import bo.com.bienvenido18.android.model.Base;
 import bo.com.bienvenido18.android.model.PostTramite;
 import bo.com.bienvenido18.android.model.users.Comentarios;
 import bo.com.bienvenido18.android.model.users.Tramites;
+import bo.com.bienvenido18.android.model.users.UniversidadCocha;
 import bo.com.bienvenido18.android.model.users.UserO;
 import bo.com.bienvenido18.android.model.users.UserP;
 import bo.com.bienvenido18.android.repository.api.ApiRepository;
@@ -111,6 +112,17 @@ public class MockRepository implements RepositoryImpl {
         List<Comentarios> uniList = new Gson().fromJson(json, listType);
         results.postValue(new Base<>(uniList));
         return results;*/
+    }
+
+    @Override
+    public LiveData<Base<List<UniversidadCocha>>> getUniversidadesCocha(String cocha) {
+        MutableLiveData<Base<List<UniversidadCocha>>> results = new MutableLiveData<>();
+        String json = "[{\"uuid\":\"1\",\"displayNameCocha\":\"UMSS\",\"coverPhoto\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTy3NzLxQ1igVCxSBysoC_2v-nMy4aSmblOOQ&usqp=CAU\",\"linksCocha\":\" Para mas info visitanos en: www.umss.edu.bo\",\"direccionCocha\":\" Dirección: Rectorado Av. Ballivián esquina Reza #591 Cochabamba, Bolivia\",\"telefonosCocha\":\" Teléfonos: 4-4524768 / 4220717 \",\"carrerasCocha\":\"Carreras: Ingeniería de Sistemas, Administración de Empresas, Psicología,Relaciones internacionales,Cinematografía,Comercio internacional, Música,Comunicación Social.\"},{\"uuid\":\"2\",\"displayNameCocha\":\"UAB\",\"coverPhoto\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSzSKje-CUIhULZSvzFCdaIg-2oQIW2BWhgUw&usqp=CAU\",\"linksCocha\":\" Para mas info visitanos en: www.uab.edu.bo\",\"direccionCocha\":\"Dirección:  Av. Simón I. Patiño Km 1, Vinto\",\"telefonosCocha\":\"Teléfonos: 4-4263330 / 4263331\",\"carrerasCocha\":\"Carreras: Ingeniería, Medicina, Exactas, Economía, Psicología,Relaciones internacionales,Cinematografía,Comercio internacional,Música,Comunicación Social,Veterinaria,Nutrición,Fisioterapia,Infromática,\"},{\"uuid\":\"3\",\"displayNameCocha\":\"UNICEN\",\"coverPhoto\":\"https://telescopi.upsa.edu.bo/universidades/LOGO_UNICEN.jpg\",\"linksCocha\":\" Para mas info visitanos en: www.unicen.edu.bo\",\"direccionCocha\":\"Dirección: Calle Santiváñez N° 216\",\"telefonosCocha\":\"Teléfonos:  4–4252987 \",\"carrerasCocha\":\"Carreras: Ingeniería, Economía, Administración de empresas, Arquitectura, Psicología,Relaciones internacionales,Cinematografía,Comercio internacional,Música,Comunicación Social,Veterinaria,Nutrición,Fisioterapia,Infromática,\"},{\"uuid\":\"4\",\"displayNameCocha\":\"ULAT\",\"coverPhoto\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQV6VQ9UCYniDEcC8AsXU6nb8p2laqHGK5FPQ&usqp=CAU\",\"linksCocha\":\" Para mas info visitanos en: www.ulat.edu.bo\",\"direccionCocha\":\"Dirección: Calle Uruguay No E-0836\",\"telefonosCocha\":\"Teléfonos: 4572321 \",\"carrerasCocha\":\"Carreras: Ingeniería Comercial , Derecho, Psicología,Relaciones internacionales,Cinematografía,Comercio internacional,Música,Comunicación Social,Veterinaria,Nutrición,Fisioterapia,Infromática,\"},{\"uuid\":\"5\",\"displayNameCocha\":\"NUR\",\"coverPhoto\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSZWo3OrJXQIkIgEJc5lJjme8tD3fwavIuiAQ&usqp=CAU\",\"linksCocha\":\" Para mas info visitanos en: www.nur.edu\",\"direccionCocha\":\" Dirección: Calle La Reza N° 265 entre Junín y Hamiraya\",\"telefonosCocha\":\"Teléfonos: 4527607\",\"carrerasCocha\":\"Economía, Contabilidad, Psicología,Relaciones internacionales,Cinematografía,Comercio internacional,Música,Comunicación Social,Veterinaria,Nutrición,Fisioterapia,Infromática,\"},{\"uuid\":\"6\",\"displayNameCocha\":\"USIP\",\"coverPhoto\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT96V3EFWiO9tPSjWKMAmveHU2sZUQgI_6uig&usqp=CAU\",\"linksCocha\":\" Para mas info visitanos en: www.usip.edu.bo\",\"direccionCocha\":\"Dirección: Av. Villazón Nº 22, km 1 a Sacaba.\",\"telefonosCocha\":\" Teléfonos:  4539930\",\"carrerasCocha\":\"Odontología, Comunicación, Psicología,Relaciones internacionales,Cinematografía,Comercio internacional,Música,Comunicación Social,Veterinaria,Nutrición,Fisioterapia,Infromática\"},{\"uuid\":\"7\",\"displayNameCocha\":\"UNITEPC\",\"coverPhoto\":\"https://unitepc.edu.bo/uploads-page/2019-07/NEW190719183410-392_1838-392_n.jpg\",\"linksCocha\":\" Para mas info visitanos en: www.unitepc.edu.bo\",\"direccionCocha\":\"Dirección: Av. Blanco Galindo Km 71/2, zona Florida norte\",\"telefonosCocha\":\"Teléfono: 4258862\",\"carrerasCocha\":\"Carreras: Medicina, Odontología,Gastronomia,Psicología,Relaciones internacionales,Cinematografía,Comercio internacional,Música,Comunicación Social,Veterinaria,Nutrición,Fisioterapia,Infromática,\"}]";
+        Type listType = new TypeToken<ArrayList<UniversidadCocha>>() {
+        }.getType();
+        List<UniversidadCocha> unicocha = new Gson().fromJson(json, listType);
+        results.postValue(new Base<>(unicocha));
+        return results;
     }
 
     @Override
