@@ -10,9 +10,12 @@ import androidx.lifecycle.Observer;
 import java.util.List;
 
 import bo.com.bienvenido18.android.model.Base;
-import bo.com.bienvenido18.android.model.PostTramite;
+//import bo.com.bienvenido18.android.model.PostTramite;
+//import bo.com.bienvenido18.android.model.PostTramite;
 import bo.com.bienvenido18.android.model.users.Comentarios;
 import bo.com.bienvenido18.android.model.users.Tramites;
+//import bo.com.bienvenido18.android.model.users.UniversidadCocha;
+import bo.com.bienvenido18.android.model.users.UniversidadCocha;
 import bo.com.bienvenido18.android.model.users.UserO;
 import bo.com.bienvenido18.android.repository.api.ApiRepository;
 import bo.com.bienvenido18.android.repository.fireBase.FirebaseRepository;
@@ -22,7 +25,7 @@ import bo.com.bienvenido18.android.ui.adapter.Universidades;
 public class Repository implements RepositoryImpl {
     private LocalRepository local;
 
-    public Repository(Application application){
+    public Repository(Application application) {
         local = new LocalRepository(application);
     }
 
@@ -59,7 +62,7 @@ public class Repository implements RepositoryImpl {
                     local.update(listBase.getData());
                 }
             }
-            });
+        });
 
         return results;
     }
@@ -70,15 +73,8 @@ public class Repository implements RepositoryImpl {
     }
 
     @Override
-    public LiveData<Base<String>> addPostToTramite(String uuidTramite, PostTramite postTramites, Uri image) {//, Uri image
-        return FirebaseRepository.getInstance().addPostToTramite(uuidTramite, postTramites, image); //, image
-
+    public LiveData<Base<List<UniversidadCocha>>> getUniversidadesCocha(String cocha) {
+        return null;
     }
-
-    @Override
-    public LiveData<Base<List<PostTramite>>> observeTramitePost(String uuidTramite) {
-        return FirebaseRepository.getInstance().observeTramitePost(uuidTramite);
-    }
-
 
 }
