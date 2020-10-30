@@ -40,7 +40,7 @@ public class Launcher extends AppCompatActivity {
         universidad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Launcher.this, ActivityU.class));
+                startActivity(new Intent(Launcher.this, menuCuidades.class));
             }
         });
 

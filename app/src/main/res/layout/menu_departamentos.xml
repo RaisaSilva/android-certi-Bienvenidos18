@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#effad3"
+    tools:context=".ui.activities.menuCuidades">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="¿Qué ciudad te gustaría?"
+        android:textSize="@dimen/space_xxl"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
+        android:padding="@dimen/space_sm"
+        android:background="#bbbfca"/>
+
+    <Button
+        android:id="@+id/la_paz"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="La Paz"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:background="#a8dda8"
+        android:layout_marginTop="100dp"
+        android:layout_marginHorizontal="50dp"/>
+
+    <Button
+        android:id="@+id/cochabamba"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Cochabamba"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:background="#a8dda8"
+        android:layout_marginTop="50dp"
+        android:layout_marginHorizontal="50dp"/>
+
+    <Button
+        android:id="@+id/santa_cruz"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Santa Cruz"
+        android:layout_marginTop="50dp"
+        android:layout_marginHorizontal="50dp"
+        android:textStyle="bold"
+        android:background="#a8dda8"
+        android:textSize="20dp"/>
+
+
+</LinearLayout>

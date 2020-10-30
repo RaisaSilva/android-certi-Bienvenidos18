@@ -7,6 +7,8 @@ public class Constants {
 
     public static final int ERROR_LOGIN = 2000;
     public static final int ERROR_INVALID_EMAIL = 2001;
+    public static final int ERROR_wRONG_PASSWORD = 2002;
+    public static final int ERROR_REGISTER_DB = 2005;
 
     //Server
     public static final int ERROR_SERVER = 3000;
@@ -22,6 +24,9 @@ public class Constants {
     public static final String QUERY_PARAM_ALT = "media";
     public static final String QUERY_PARAM_ALT_COMENTARIOS = "media";
 
+    public static final String KEY_TRAMITE_UUID_SELECTED = "uuidTramite";
 
-    public static final int ERROR_wRONG_PASSWORD = 2002;
+    //Firebase
+    public static final String FIREBASE_PATH_TRAMITES = "/tramites";
+
 }
