@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,9 +45,10 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
     private RecyclerView transRecyclerView;
     private AdapterTramites adapter;
     private List<Tramites> tramites = new ArrayList<>();
-    private FloatingActionButton nuevoT;
+    private Button nuevoT;
     private PostTramite postTselected;
     // private LinearLayout mapaTramitesInfo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +65,15 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
         initEvents();
         getIntentValues();
         subscribeToData();
+
+        nuevoT= (Button)findViewById(R.id.nuevoTra);
+
+        nuevoT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ActivityTramites.this, CreatePostTramitesActivity.class));
+            }
+        });
     }
     private void initViews() {
         linearLayout = findViewById(R.id.layoutTramite);
@@ -80,15 +91,17 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
     }
     private void initEvents() {
         adapter.setCallback(this);
-        nuevoT.setOnClickListener(new View.OnClickListener() {
+       /* nuevoT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, CreatePostTramitesActivity.class);
                 intent.putExtra(Constants.KEY_TRAMITE_UUID_SELECTED, postTselected.getUuid());
                 startActivity(intent);
             }
-        });
+        });*/
     }
+
+
 
     private void getIntentValues() {
         Intent intent = getIntent();
