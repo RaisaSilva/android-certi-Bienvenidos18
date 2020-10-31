@@ -134,6 +134,10 @@ public class MockRepository implements RepositoryImpl {
     public LiveData<Base<List<PostTramite>>> observeTramitePost(String uuiTramite) {
         return null;
     }
+    @Override
+    public LiveData<Base<UserO>> registerUser(UserO user) {
+        return null;
+    }
 
 
 }

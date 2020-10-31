@@ -9,6 +9,8 @@ public class Constants {
     public static final int ERROR_INVALID_EMAIL = 2001;
     public static final int ERROR_wRONG_PASSWORD = 2002;
     public static final int ERROR_REGISTER_DB = 2005;
+    public static final int ERROR_REGISTER = 2007;
+    public static final int ERROR_REGISTER_EMAIL_ALREADY_EXISTS = 2003;
 
     //Server
     public static final int ERROR_SERVER = 3000;

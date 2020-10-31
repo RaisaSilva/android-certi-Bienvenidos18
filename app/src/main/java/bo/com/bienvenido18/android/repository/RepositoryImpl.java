@@ -22,6 +22,10 @@ public interface RepositoryImpl {
     LiveData<Base<List<Comentarios>>> getComentarios(String comen);
     LiveData<Base<List<UniversidadCocha>>> getUniversidadesCocha(String cocha);
 
+
+
+    LiveData<Base<UserO>> registerUser(UserO user);
+
     /* -------- Post de tramites ---------*/
 
     LiveData<Base<String>> addPostToTramite(String uuidTramite, PostTramite postTramite , Uri image);

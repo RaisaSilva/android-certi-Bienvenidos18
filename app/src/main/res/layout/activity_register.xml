@@ -30,41 +30,55 @@
             android:textSize="35dp"
             android:textStyle="bold">
         </TextView>
-        <EditText
-            android:layout_marginTop="80dp"
-            android:id="@+id/displayName"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="Nombre"
-            android:inputType="textPersonName"
-            android:textColor="@color/white"
-            android:textColorHint="@android:color/white"
-            android:textSize="20dp"
-            android:textStyle="bold"/>
-
-        <EditText
-            android:layout_marginTop="25dp"
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="Correo Electrónico"
-            android:inputType="textPersonName"
-            android:textColor="@color/white"
-            android:textColorHint="@android:color/white"
-            android:textSize="20dp"
-            android:textStyle="bold"/>
-
-        <EditText
-            android:layout_marginTop="25dp"
-            android:id="@+id/password"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Contraseña"
-            android:inputType="textPassword"
-            android:textColor="@color/white"
-            android:textColorHint="@android:color/white"
-            android:textSize="20dp"
-            android:textStyle="bold"/>
+            android:layout_marginTop="@dimen/space_md">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nameTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="register_name" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_md">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="register_email" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_md">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="register_password"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_md">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordRepeatTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="register_password_repeat"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
         <LinearLayout
             android:layout_marginTop="25dp"
             android:layout_width="match_parent"
@@ -86,7 +100,8 @@
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_marginStart="70dp"
-                android:background="@drawable/boton1"/>
+                android:background="@drawable/boton1"
+                android:onClick="registerUser" />
 
         </LinearLayout>
 

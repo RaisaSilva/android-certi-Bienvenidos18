@@ -8,6 +8,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.FirebaseUser;
 
 import bo.com.bienvenido18.android.model.Base;
@@ -42,6 +43,31 @@ public class FirebaseAuthManager {
                     }
                 });
 
+        return results;
+    }
+    public LiveData<Base<UserO>> registerUser(UserO user) {
+        MutableLiveData<Base<UserO>> results = new MutableLiveData<>();
+        mAuth.createUserWithEmailAndPassword(user.getEmail(), user.getPassword())
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            FirebaseUser firebaseUser = mAuth.getCurrentUser();
+                            results.postValue(new Base<>(FirebaseMapper.firebaseUserToUser(firebaseUser)));
+                        } else {
+                            if (task.getException() instanceof FirebaseAuthException) {
+                                if (((FirebaseAuthException) task.getException()).getErrorCode().equals("ERROR_EMAIL_ALREADY_IN_USE")) {
+                                    results.postValue(new Base<>(Constants.ERROR_REGISTER_EMAIL_ALREADY_EXISTS, task.getException()));
+                                } else {
+                                    results.postValue(new Base<>(Constants.ERROR_REGISTER, task.getException()));
+                                }
+                            } else {
+                                results.postValue(new Base<>(Constants.ERROR_REGISTER, task.getException()));
+                            }
+                        }
+                    }
+                });
         return results;
     }
 }

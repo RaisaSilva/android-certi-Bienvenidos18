@@ -13,6 +13,10 @@ public class ErrorMapper {
                 return "Email or Password incorrect";
             case Constants.ERROR_wRONG_PASSWORD:
                 return "La contraseña tiene que tener números";
+            case Constants.ERROR_REGISTER:
+                return "error_register";
+            case Constants.ERROR_REGISTER_EMAIL_ALREADY_EXISTS:
+                return "register_email_already_exist";
             default:
                 return "Unknown error";
         }

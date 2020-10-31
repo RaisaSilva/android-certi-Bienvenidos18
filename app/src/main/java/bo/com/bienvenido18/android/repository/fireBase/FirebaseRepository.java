@@ -39,6 +39,7 @@ public class FirebaseRepository {
         return auth.loginWithEmailPassword(email, password);
     }
 
+
     public LiveData<Base<String>> addPostToTramite(String uuidTramite, PostTramite postTramite, Uri image) {
 
 
@@ -51,6 +52,9 @@ public class FirebaseRepository {
 
     public LiveData<Base<List<PostTramite>>> observeTramitePost(String uuiTramite) {
         return db.observeTramitePost(uuiTramite);
+    }
+    public LiveData<Base<UserO>> register(UserO user) {
+        return auth.registerUser(user);
     }
 
 }

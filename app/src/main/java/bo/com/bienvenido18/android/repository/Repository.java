@@ -85,6 +85,10 @@ public class Repository implements RepositoryImpl {
     public LiveData<Base<List<PostTramite>>> observeTramitePost(String uuidTramite) {
         return FirebaseRepository.getInstance().observeTramitePost(uuidTramite);
     }
+    @Override
+    public LiveData<Base<UserO>> registerUser(UserO user) {
+        return FirebaseRepository.getInstance().register(user);
+    }
 
 
 }

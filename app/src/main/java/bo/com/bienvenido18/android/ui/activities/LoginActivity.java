@@ -90,5 +90,9 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+    public void openRegister(View view) {
+        Intent intent = new Intent(context, RegisterActivity.class);
+        startActivity(intent);
+    }
 
 }
