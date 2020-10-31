@@ -15,6 +15,7 @@ import bo.com.bienvenido18.android.model.Base;
 import bo.com.bienvenido18.android.model.users.UserO;
 import bo.com.bienvenido18.android.utils.Constants;
 import bo.com.bienvenido18.android.utils.FirebaseMapper;
+import bo.com.bienvenido18.android.utils.Validations;
 
 public class FirebaseAuthManager {
     private FirebaseAuth mAuth;
@@ -25,6 +26,20 @@ public class FirebaseAuthManager {
 
     public LiveData<Base<UserO>> loginWithEmailPassword(String email, String password) {
         MutableLiveData<Base<UserO>> results = new MutableLiveData<>();
+        if (Validations.isEmpty(email) || Validations.isEmpty(password)) {
+            results.postValue(new Base(Constants.ERROR_EMPTY_VALUES, null));
+            return results;
+        }
+
+        if (!Validations.isValidEmail(email)) {
+            results.postValue(new Base(Constants.ERROR_INVALID_EMAIL, null));
+            return results;
+        }
+        if (!Validations.isValidPasswoord(password)) {
+            results.postValue(new Base(Constants.ERROR_wRONG_PASSWORD, null));
+            return results;
+        }
+
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -39,7 +54,6 @@ public class FirebaseAuthManager {
 
                         }
 
-                        // ...
                     }
                 });
 

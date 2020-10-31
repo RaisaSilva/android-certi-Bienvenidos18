@@ -17,9 +17,11 @@
         android:orientation="vertical">
 
         <ImageButton
+            android:id="@+id/botonAtras"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:background="@drawable/ic_back_arrow_icon_131563"/>
+
         <TextView
             android:id="@+id/bienvenido18"
             android:layout_marginTop="80dp"
@@ -33,51 +35,67 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_md">
+            android:layout_marginTop="@dimen/space_md"
+            android:textColorHint="@color/white"
+            android:textStyle="bold">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/nameTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="register_name" />
+                android:hint="Ingrese su nombre"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_md">
+            android:layout_marginTop="@dimen/space_md"
+            android:textColorHint="@color/white"
+            android:textStyle="bold">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/emailTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="register_email" />
+                android:hint="Ingrese un correo electrónico"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_md">
+            android:layout_marginTop="@dimen/space_md"
+            android:textColorHint="@color/white"
+            android:textStyle="bold">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passwordTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="register_password"
-                android:inputType="textPassword" />
+                android:hint="Ingresa una contraseña"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_md">
+            android:layout_marginTop="@dimen/space_md"
+            android:textColorHint="@color/white"
+            android:textStyle="bold">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passwordRepeatTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="register_password_repeat"
-                android:inputType="textPassword" />
+                android:hint="Repite la contraseña"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
         </com.google.android.material.textfield.TextInputLayout>
         <LinearLayout
             android:layout_marginTop="25dp"

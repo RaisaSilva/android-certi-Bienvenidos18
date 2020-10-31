@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
 
         emailEditText.setText("nuria.michel@gmail.com");
         passwordEditText.setText("contrasena1");
-    }
+}
 
     private void initEvents() {
     }

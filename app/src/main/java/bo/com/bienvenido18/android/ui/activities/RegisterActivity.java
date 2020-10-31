@@ -22,6 +22,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -37,6 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
     private TextInputEditText emailTextInputEditText;
     private TextInputEditText passwordTextInputEditText;
     private TextInputEditText passwordRepeatTextInputEditText;
+    private ImageButton imageButton;
 
 
     private ProgressDialog loading;
@@ -52,6 +54,16 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         this.context = this;
         registerViewModel = new ViewModelProvider(this).get(RegisterViewModel.class);
+        getSupportActionBar().hide();
+        imageButton=findViewById(R.id.botonAtras);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+            }
+        });
+
 
         initViews();
         initEvents();
@@ -95,6 +107,7 @@ public class RegisterActivity extends AppCompatActivity {
                 dismissLoading();
                 if (userBase.isSuccess()) {
                     RegisterActivity.this.finish();
+
                 } else {
                     Toast.makeText(context, "Error al registrar el usuario", Toast.LENGTH_SHORT).show();
                 }
