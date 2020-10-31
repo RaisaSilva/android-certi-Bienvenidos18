@@ -29,7 +29,7 @@ public class Repository implements RepositoryImpl {
 
     @Override
     public LiveData<Base<UserO>> loginWithEmailPassword(String email, String password) {
-        return null;
+        return FirebaseRepository.getInstance().loginWithEmailPassword(email, password);
     }
 
     @Override

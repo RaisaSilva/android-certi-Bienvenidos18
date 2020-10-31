@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "513636595680",
+    "firebase_url": "https://bienvenido18-15d9f.firebaseio.com",
+    "project_id": "bienvenido18-15d9f",
+    "storage_bucket": "bienvenido18-15d9f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:513636595680:android:a26611a966a1333dc31d85",
+        "android_client_info": {
+          "package_name": "bo.com.bienvenido18.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "513636595680-n9gmjrl9gi5h42haof6q0bga8kjkqrmi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "bo.com.bienvenido18.android",
+            "certificate_hash": "534e0a5059966f6202104accc23cf093545c528f"
+          }
+        },
+        {
+          "client_id": "513636595680-540p9fgn28f1t5gdvfmglkf4kl5tt6jh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhRPaFsSb6my3e2wqo4H36uux9oFhasrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "513636595680-540p9fgn28f1t5gdvfmglkf4kl5tt6jh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -9,6 +9,7 @@ import androidx.lifecycle.LiveData;
 import bo.com.bienvenido18.android.model.Base;
 import bo.com.bienvenido18.android.model.users.UserO;
 import bo.com.bienvenido18.android.repository.MockRepository;
+import bo.com.bienvenido18.android.repository.Repository;
 import bo.com.bienvenido18.android.repository.RepositoryImpl;
 
 public class LoginViewModel extends AndroidViewModel {
@@ -17,7 +18,7 @@ public class LoginViewModel extends AndroidViewModel {
 
     public LoginViewModel(@NonNull Application application) {
         super(application);
-        repository = new MockRepository(application);
+        repository = new Repository(application);
     }
 
     public LiveData<Base<UserO>> loginWithEmailPassword(String email, String password) {

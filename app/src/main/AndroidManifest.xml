@@ -14,10 +14,6 @@
         <activity android:name=".ui.activities.Launcher"></activity>
         <activity android:name=".ui.activities.ActivityU"></activity>
         <activity android:name=".ui.activities.ActivityTramites"></activity>
-        <activity android:name=".ui.activities.CreatePostTramitesActivity">
-
-        </activity>
-
 
         <activity android:name=".ui.activities.LoginActivity">
             <intent-filter>
@@ -32,6 +28,8 @@
         <activity android:name=".ui.activities.ActivityUCocha" />
         <activity android:name=".ui.activities.CochaDetails" />
         <activity android:name=".ui.activities.menuCuidades" />
+        <activity android:name=".ui.activities.CreatePostTramitesActivity" />
+        <activity android:name=".ui.activities.RegisterActivity" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

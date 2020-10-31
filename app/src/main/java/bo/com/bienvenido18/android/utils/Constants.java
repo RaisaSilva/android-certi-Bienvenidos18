@@ -27,6 +27,6 @@ public class Constants {
     public static final String KEY_TRAMITE_UUID_SELECTED = "uuidTramite";
 
     //Firebase
-    public static final String FIREBASE_PATH_TRAMITES = "/tramites";
+    public static final String FIREBASE_PATH_TRAMITES = "/Tramites";
 
 }

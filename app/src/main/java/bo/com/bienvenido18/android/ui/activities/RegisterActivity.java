@@ -1,0 +1,16 @@
+package bo.com.bienvenido18.android.ui.activities;
+import bo.com.bienvenido18.android.R;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+public class RegisterActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_register);
+        getSupportActionBar().hide();
+    }
+}

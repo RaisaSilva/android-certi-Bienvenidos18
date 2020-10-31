@@ -1,38 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/parentRelativeLayout"
+    android:id="@+id/parentRelativeLayoutRegister"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_login"
-    tools:context=".ui.activities.LoginActivity">
+    android:background="@drawable/background_register"
+    tools:context=".ui.activities.RegisterActivity">
+
 
     <LinearLayout
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
+        android:layout_centerVertical="true"
         android:id="@+id/backgroundLoginLinearLayout"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <ImageButton
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ic_back_arrow_icon_131563"/>
         <TextView
             android:id="@+id/bienvenido18"
+            android:layout_marginTop="80dp"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="Bienvenido a los 18!"
+            android:text="Crea una Cuenta"
             android:textColor="@color/white"
             android:textSize="35dp"
             android:textStyle="bold">
         </TextView>
+        <EditText
+            android:layout_marginTop="80dp"
+            android:id="@+id/displayName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Nombre"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
 
         <EditText
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="25dp"
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="Correo Electrónico"
             android:inputType="textPersonName"
-            android:textColor="#455a64"
-            android:textColorHint="@android:color/darker_gray"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/white"
             android:textSize="20dp"
             android:textStyle="bold"/>
 
@@ -43,8 +61,8 @@
             android:layout_height="wrap_content"
             android:hint="Contraseña"
             android:inputType="textPassword"
-            android:textColor="#455a64"
-            android:textColorHint="@android:color/darker_gray"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/white"
             android:textSize="20dp"
             android:textStyle="bold"/>
         <LinearLayout
@@ -57,8 +75,8 @@
                 android:id="@+id/iniciarSesion"
                 android:layout_width="155dp"
                 android:layout_height="wrap_content"
-                android:text="Iniciar Sesión"
-                android:textColor="#455a64"
+                android:text="Registrarse"
+                android:textColor="@color/white"
                 android:textSize="24dp"
                 android:textStyle="bold"/>
 
@@ -68,23 +86,9 @@
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_marginStart="70dp"
-                android:background="@drawable/boton1"
-                android:onClick="login" />
-
+                android:background="@drawable/boton1"/>
 
         </LinearLayout>
-
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Registrarse"
-            android:textAllCaps="false"
-            android:textColor="#455a64"
-            android:textSize="15dp"
-            android:background="?android:selectableItemBackground"/>
-
 
     </LinearLayout>
 
