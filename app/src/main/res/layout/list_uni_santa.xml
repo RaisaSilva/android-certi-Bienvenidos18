@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/listaSantaCruz"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.activities.ActivityUSantaCruz">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Santa Cruz"
+        android:textSize="@dimen/space_xxl"
+        android:gravity="center_horizontal"
+        android:textStyle="bold"
+        android:padding="@dimen/space_sm"
+        android:background="#a4b787"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerSanta"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

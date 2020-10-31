@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:weightSum="100"
+    android:background="#fadcaa"
+    android:id="@+id/layout_detail_santa"
+    tools:context=".ui.activities.SantaDetails">
+    <ImageView
+        android:id="@+id/imagDetalleSanta"
+        android:layout_width="match_parent"
+        android:adjustViewBounds="true"
+        android:layout_height="0dp"
+        android:layout_weight="70"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"/>
+    <TextView
+        android:id="@+id/nombreUSanta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre"
+        android:background="#b2deec"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:textSize="30dp"
+        android:textColor="#000"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Link"
+        android:textSize="20dp"
+        android:textColor="#000"/>
+
+
+    <TextView
+        android:id="@+id/linkDetalleSanta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Link"
+        android:textSize="20dp"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/textoDetalleSanta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="detalles"
+        android:textSize="20dp"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/telefonoDetalleSanta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="detalles"
+        android:textSize="20dp"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/CarrerasDetalleSanta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="detalles"
+        android:textSize="20dp"
+        android:textColor="#000"/>
+
+</LinearLayout>

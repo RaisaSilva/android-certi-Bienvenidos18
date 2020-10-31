@@ -18,6 +18,7 @@ import bo.com.bienvenido18.android.model.PostTramite;
 import bo.com.bienvenido18.android.model.users.Comentarios;
 import bo.com.bienvenido18.android.model.users.Tramites;
 import bo.com.bienvenido18.android.model.users.UniversidadCocha;
+import bo.com.bienvenido18.android.model.users.UniversidadSantaCruz;
 import bo.com.bienvenido18.android.model.users.UserO;
 import bo.com.bienvenido18.android.model.users.UserP;
 import bo.com.bienvenido18.android.repository.api.ApiRepository;
@@ -123,6 +124,18 @@ public class MockRepository implements RepositoryImpl {
         List<UniversidadCocha> unicocha = new Gson().fromJson(json, listType);
         results.postValue(new Base<>(unicocha));
         return results;
+    }
+
+    @Override
+    public LiveData<Base<List<UniversidadSantaCruz>>> getUniversidadesSanta(String scz) {
+        MutableLiveData<Base<List<UniversidadSantaCruz>>> results = new MutableLiveData<>();
+        String json = "[{\"uuid\":\"1\",\"displayNameS\":\"UAGRM\",\"coverPhoto\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRe_aX03w0B-SDHUpEQOsE1ExI3GzWTla4WTw&usqp=CAU\",\"linksS\":\" Para mas info visitanos en:www.uagrm.edu.bo\",\"direccionS\":\" Dirección: Plaza 24 de Septiembre\",\"telefonosS\":\" Teléfonos: (591) 3-3365544 \",\"carrerasS\":\"Carreras: Ingeniería de Sistemas, Administración de Empresas, Psicología,Relaciones internacionales,Cinematografía,Comercio internacional, Música,Comunicación Social.\"},{\"uuid\":\"2\",\"displayNameS\":\"UNO\",\"coverPhoto\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQhojWWI6pjrGXmeP0pcscTPSpxVnRkbqgg6g&usqp=CAU\",\"linksS\":\" Para mas info visitanos en: www.uno.edu.bo\",\"direccionS\":\"Dirección:  España Nº 383 entre Seoane y Buenos Aires\",\"telefonosS\":\"Teléfonos:  3 37 79 51\",\"carrerasS\":\"Carreras: Ingeniería, Medicina, Exactas, Economía, Psicología,Relaciones internacionales,Cinematografía,Comercio internacional,Música,Comunicación Social,Veterinaria,Nutrición,Fisioterapia,Infromática,\"},{\"uuid\":\"3\",\"displayNameS\":\"UPSA\",\"coverPhoto\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSys2ub2qjPTyyc7wYlfAP_VIgbw5dDumBnag&usqp=CAU\",\"linksS\":\" Para mas info visitanos en: www.upsa.edu.bo\",\"direccionS\":\"Dirección: Campus Universitario: Av. Paraguá y 4to. Anillo\",\"telefonosS\":\"Teléfonos: 346 4000\",\"carrerasS\":\"Carreras: Ingeniería, Economía, Administración de empresas, Arquitectura, Psicología,Relaciones internacionales,Cinematografía,Comercio internacional,Música,Comunicación Social,Veterinaria,Nutrición,Fisioterapia,Infromática,\"},{\"uuid\":\"4\",\"displayNameS\":\"UTEPSA\",\"coverPhoto\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9YcTSB_Tey2PTlENQx1_dsu15k0eyXOzFWg&usqp=CAU\",\"linksS\":\" Para mas info visitanos en: www.utepsa.edu\",\"direccionS\":\"Campus: 3er. anillo interno Nº 715 entre Av. Busch y Av. San Martín\",\"telefonosS\":\"Teléfonos:  363-9000 \",\"carrerasS\":\"Carreras: Ingeniería Comercial , Derecho, Psicología,Relaciones internacionales,Cinematografía,Comercio internacional,Música,Comunicación Social,Veterinaria,Nutrición,Fisioterapia,Infromática,\"},{\"uuid\":\"5\",\"displayNameS\":\"UPDS\",\"coverPhoto\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQBReKr1V9_GrwpYPKnoajjX9_qxbPu3cozFA&usqp=CAU\",\"linksS\":\" Para mas info visitanos en: www.upds.edu.bo\",\"direccionS\":\" Dirección: Av. Beni y 3er. Anillo Externo\",\"telefonosS\":\"Teléfonos: 342 6600\",\"carrerasS\":\"Economía, Contabilidad, Psicología,Relaciones internacionales,Cinematografía,Comercio internacional,Música,Comunicación Social,Veterinaria,Nutrición,Fisioterapia,Infromática,\"},{\"uuid\":\"6\",\"displayNameS\":\"UCEBOL\",\"coverPhoto\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTTaqJ8hAKlVDI1LS_Hk9hlzYhGCq9CYuRQzQ&usqp=CAU\",\"linksS\":\" Para mas info visitanos en:  www.ucebol.edu.bo\",\"direccionS\":\"Dirección:  Km. 5 Carretera al Norte\",\"telefonosS\":\" Teléfonos:  3453247\",\"carrerasS\":\"Odontología, Comunicación, Psicología,Relaciones internacionales,Cinematografía,Comercio internacional,Música,Comunicación Social,Veterinaria,Nutrición,Fisioterapia,Infromática\"}]";
+        Type listType = new TypeToken<ArrayList<UniversidadSantaCruz>>() {
+        }.getType();
+        List<UniversidadSantaCruz> uniscz = new Gson().fromJson(json, listType);
+        results.postValue(new Base<>(uniscz));
+        return results;
+
     }
 
     @Override

@@ -14,6 +14,7 @@ import bo.com.bienvenido18.android.model.PostTramite;
 import bo.com.bienvenido18.android.model.users.Comentarios;
 import bo.com.bienvenido18.android.model.users.Tramites;
 import bo.com.bienvenido18.android.model.users.UniversidadCocha;
+import bo.com.bienvenido18.android.model.users.UniversidadSantaCruz;
 import bo.com.bienvenido18.android.model.users.UserO;
 import bo.com.bienvenido18.android.repository.api.ApiRepository;
 import bo.com.bienvenido18.android.repository.fireBase.FirebaseRepository;
@@ -72,6 +73,11 @@ public class Repository implements RepositoryImpl {
 
     @Override
     public LiveData<Base<List<UniversidadCocha>>> getUniversidadesCocha(String cocha) {
+        return null;
+    }
+
+    @Override
+    public LiveData<Base<List<UniversidadSantaCruz>>> getUniversidadesSanta(String scz) {
         return null;
     }
 

@@ -30,6 +30,8 @@
         <activity android:name=".ui.activities.menuCuidades" />
         <activity android:name=".ui.activities.CreatePostTramitesActivity" />
         <activity android:name=".ui.activities.RegisterActivity" />
+        <activity android:name=".ui.activities.SantaDetails" />
+        <activity android:name=".ui.activities.ActivityUSantaCruz" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

@@ -49,7 +49,7 @@ public class menuCuidades  extends AppCompatActivity {
         SantaCruz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(menuCuidades.this, ActivityU.class));
+                startActivity(new Intent(menuCuidades.this, ActivityUSantaCruz.class));
 
             }
         });
