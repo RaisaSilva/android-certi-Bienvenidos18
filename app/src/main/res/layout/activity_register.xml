@@ -27,7 +27,7 @@
             android:layout_marginTop="80dp"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="Crea una Cuenta"
+            android:text="@string/crear"
             android:textColor="@color/white"
             android:textSize="35dp"
             android:textStyle="bold">
@@ -43,7 +43,7 @@
                 android:id="@+id/nameTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Ingrese su nombre"
+                android:hint="@string/nombre"
                 android:textColor="@color/white"
                 android:textStyle="bold"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -59,7 +59,7 @@
                 android:id="@+id/emailTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Ingrese un correo electrónico"
+                android:hint="@string/correo"
                 android:textColor="@color/white"
                 android:textStyle="bold"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -75,7 +75,7 @@
                 android:id="@+id/passwordTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Ingresa una contraseña"
+                android:hint="@string/contraseña"
                 android:inputType="textPassword"
                 android:textColor="@color/white"
                 android:textStyle="bold"/>
@@ -92,7 +92,7 @@
                 android:id="@+id/passwordRepeatTextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Repite la contraseña"
+                android:hint="@string/repetir"
                 android:inputType="textPassword"
                 android:textColor="@color/white"
                 android:textStyle="bold"/>
@@ -107,7 +107,7 @@
                 android:id="@+id/iniciarSesion"
                 android:layout_width="155dp"
                 android:layout_height="wrap_content"
-                android:text="Registrarse"
+                android:text="@string/reg"
                 android:textColor="@color/white"
                 android:textSize="24dp"
                 android:textStyle="bold"/>

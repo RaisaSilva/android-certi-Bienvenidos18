@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="#effad3"
+    android:background="@drawable/fondo_tres"
     tools:context=".ui.activities.menuCuidades">
 
     <TextView
@@ -14,8 +14,9 @@
         android:textSize="@dimen/space_xxl"
         android:gravity="center_horizontal"
         android:textStyle="bold"
-        android:padding="@dimen/space_sm"
-        android:background="#bbbfca"/>
+        android:layout_marginTop="20dp"
+        android:textColor="#212121"
+        android:padding="@dimen/space_sm" />
 
     <Button
         android:id="@+id/la_paz"
@@ -24,8 +25,8 @@
         android:text="La Paz"
         android:textStyle="bold"
         android:textSize="20dp"
-        android:background="#a8dda8"
-        android:layout_marginTop="100dp"
+        android:background="#97e5ef"
+        android:layout_marginTop="50dp"
         android:layout_marginHorizontal="50dp"/>
 
     <Button
@@ -35,7 +36,7 @@
         android:text="Cochabamba"
         android:textStyle="bold"
         android:textSize="20dp"
-        android:background="#a8dda8"
+        android:background="#f6d198"
         android:layout_marginTop="50dp"
         android:layout_marginHorizontal="50dp"/>
 
@@ -47,7 +48,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginHorizontal="50dp"
         android:textStyle="bold"
-        android:background="#a8dda8"
+        android:background="#b7efcd"
         android:textSize="20dp"/>
 
 

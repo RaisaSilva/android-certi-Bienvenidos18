@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Welcome to 18!</string>
+    <string name="email">Email</string>
+    <string name="pass">Password</string>
+    <string name="inicioSesion">Log in</string>
+    <string name="registro">Sign up</string>
+
+
+
+
+    <string name="crear">Create an account</string>
+    <string name="nombre">Enter your name</string>
+    <string name="correo">Enter an email</string>
+    <string name="contraseña">Enter a password</string>
+    <string name="repetir">Repeat password</string>
+    <string name="reg">Sign in</string>
+
+
+    <string name="error_fill_values">Fill in all the values</string>
+    <string name="error_no_connection">Check your internet connection</string>
+    <string name="error_incorrect_login">Incorrect email or password</string>
+    <string name="error_valid_email">Enter a valid email</string>
+    <string name="error_unknown">Unknown error</string>
+
+
+    <string name="titulo">How can we help?</string>
+    <string name="b1">Procedure</string>
+    <string name="b2">College</string>
+    <string name="b3">Did you know?</string>
+
+
+</resources>
