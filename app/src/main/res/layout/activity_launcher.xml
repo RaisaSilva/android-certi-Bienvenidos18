@@ -68,6 +68,18 @@
         android:drawableRight="@drawable/question"
 
         />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/b4"
+            android:id="@+id/cerrarSesión"
+            android:layout_gravity="center"
+            android:onClick="logout"/>
+
+    </RelativeLayout>
 
 
 

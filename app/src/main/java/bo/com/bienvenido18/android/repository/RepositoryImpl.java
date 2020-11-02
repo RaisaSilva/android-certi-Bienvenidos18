@@ -27,6 +27,8 @@ public interface RepositoryImpl {
 
 
     LiveData<Base<UserO>> registerUser(UserO user);
+    LiveData<Base<UserO>> getCurrentUser();
+    void signOut();
 
     /* -------- Post de tramites ---------*/
 

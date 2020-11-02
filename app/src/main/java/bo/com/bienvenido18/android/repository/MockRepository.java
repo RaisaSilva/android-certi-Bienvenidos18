@@ -150,5 +150,14 @@ public class MockRepository implements RepositoryImpl {
         return null;
     }
 
+    @Override
+    public LiveData<Base<UserO>> getCurrentUser() {
+        return null;
+    }
+    @Override
+    public void signOut() {
+
+    }
+
 
 }

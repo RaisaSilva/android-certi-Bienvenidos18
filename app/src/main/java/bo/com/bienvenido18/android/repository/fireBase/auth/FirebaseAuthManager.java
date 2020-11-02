@@ -23,6 +23,14 @@ public class FirebaseAuthManager {
     public FirebaseAuthManager() {
         mAuth=FirebaseAuth.getInstance();
     }
+    public LiveData<Base<UserO>> getCurrentUser() {
+        MutableLiveData<Base<UserO>> results = new MutableLiveData<>();
+        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+        if (firebaseUser != null) {
+            results.postValue(new Base<>(FirebaseMapper.firebaseUserToUser(firebaseUser)));
+        }
+        return results;
+    }
 
     public LiveData<Base<UserO>> loginWithEmailPassword(String email, String password) {
         MutableLiveData<Base<UserO>> results = new MutableLiveData<>();
@@ -83,5 +91,8 @@ public class FirebaseAuthManager {
                     }
                 });
         return results;
+    }
+    public void signOut() {
+        this.mAuth.signOut();
     }
 }

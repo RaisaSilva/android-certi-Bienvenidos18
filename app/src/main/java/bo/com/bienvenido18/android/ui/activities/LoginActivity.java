@@ -46,10 +46,19 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.e(LOG, "onCreate");
+
         setContentView(R.layout.activity_login);
 
         context = this;
         viewModel = new ViewModelProvider(this).get(LoginViewModel.class);
+        viewModel.getCurrentUser().observe(this, new Observer<Base<UserO>>() {
+            @Override
+            public void onChanged(Base<UserO> userBase) {
+                if (userBase.isSuccess()) {
+                    openNextActivity(userBase.getData());
+                }
+            }
+        });
         getSupportActionBar().hide();
 
         initViews();
@@ -89,6 +98,13 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    private void openNextActivity(UserO user) {
+        Intent intent = new Intent(context, Launcher.class);
+        intent.putExtra(Constants.KEY_UUID, user.getUuid());
+        intent.putExtra(Constants.KEY_DISPLAY_NAME, user.getDisplayName());
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
     }
     public void openRegister(View view) {
         Intent intent = new Intent(context, RegisterActivity.class);

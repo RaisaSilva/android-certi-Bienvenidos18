@@ -57,4 +57,11 @@ public class FirebaseRepository {
         return auth.registerUser(user);
     }
 
+    public LiveData<Base<UserO>> getCurrentUser() {
+        return auth.getCurrentUser();
+    }
+    public void signOut() {
+        auth.signOut();
+    }
+
 }

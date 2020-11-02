@@ -19,12 +19,10 @@ public class menuCuidades  extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_departamentos);
-        try
-        {
-            this.getSupportActionBar().hide();
-        }catch (NullPointerException e){}
+        getSupportActionBar().hide();
 
-        setContentView(R.layout.menu_departamentos);
+
+
 
         LaPaz = (Button)findViewById(R.id.la_paz);
         Cochabamba = (Button)findViewById(R.id.cochabamba);

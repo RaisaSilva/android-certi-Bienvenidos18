@@ -13,6 +13,7 @@ import bo.com.bienvenido18.android.model.Base;
 import bo.com.bienvenido18.android.model.users.Comentarios;
 import bo.com.bienvenido18.android.model.users.Tramites;
 import bo.com.bienvenido18.android.repository.MockRepository;
+import bo.com.bienvenido18.android.repository.Repository;
 import bo.com.bienvenido18.android.repository.RepositoryImpl;
 
 public class ComentariosViewModel extends AndroidViewModel {
@@ -20,7 +21,7 @@ public class ComentariosViewModel extends AndroidViewModel {
 
     public ComentariosViewModel(@NonNull Application application) {
         super(application);
-        repository = new MockRepository(application);
+        repository = new Repository(application);
     }
     public LiveData<Base<List<Comentarios>>> getComentarios(String comen) {
         return repository.getComentarios(comen);//
