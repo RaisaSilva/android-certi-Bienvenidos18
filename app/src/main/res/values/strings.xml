@@ -29,6 +29,9 @@
     <string name="error_incorrect_login">Correo o Contraseña incorrectos</string>
     <string name="error_valid_email">Ingresa un correo válido</string>
     <string name="error_unknown">Error desconocido</string>
+    <string name="error_wrong_password">La contraseña debe contener números</string>
+    <string name="error_register">Error al registrar el usuario</string>
+    <string name="error_register_email_already_exist">Error al registrar el usuario, el email ya está en uso</string>
 
 
     <!---  ITEM TRAMITES -->

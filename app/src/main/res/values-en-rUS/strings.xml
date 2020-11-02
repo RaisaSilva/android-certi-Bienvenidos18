@@ -22,6 +22,9 @@
     <string name="error_incorrect_login">Incorrect email or password</string>
     <string name="error_valid_email">Enter a valid email</string>
     <string name="error_unknown">Unknown error</string>
+    <string name="error_wrong_password">The password must contain numbers</string>
+    <string name="error_register">Error register User</string>
+    <string name="error_register_email_already_exist">Email is already registered</string>
 
 
     <string name="titulo">How can we help?</string>

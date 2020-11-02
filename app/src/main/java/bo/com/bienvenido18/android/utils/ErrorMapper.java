@@ -1,24 +1,26 @@
 package bo.com.bienvenido18.android.utils;
 
 import android.content.Context;
+import bo.com.bienvenido18.android.R;
 
 public class ErrorMapper {
     public static String getError(Context context, int errorCode) {
         switch (errorCode) {
             case Constants.ERROR_EMPTY_VALUES:
-                return "Please fill all de values";
+                return context.getString(R.string.error_fill_values);
             case Constants.ERROR_LOGIN:
-                return "Please review your internet connection";
+                return context.getString(R.string.error_incorrect_login);
             case Constants.ERROR_INVALID_EMAIL:
-                return "Email or Password incorrect";
+                return context.getString(R.string.error_valid_email);
+
             case Constants.ERROR_wRONG_PASSWORD:
-                return "La contraseña tiene que tener números";
+                return context.getString(R.string.error_wrong_password);
             case Constants.ERROR_REGISTER:
-                return "error_register";
+                return context.getString(R.string.error_register);
             case Constants.ERROR_REGISTER_EMAIL_ALREADY_EXISTS:
-                return "register_email_already_exist";
+                return context.getString(R.string.error_register_email_already_exist);
             default:
-                return "Unknown error";
+                return context.getString(R.string.error_unknown);
         }
     }
 }
