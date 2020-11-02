@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cúal te interesa?"
+        android:text="@string/la_paz"
         android:textSize="@dimen/space_xxl"
         android:gravity="center_horizontal"
         android:textStyle="bold"

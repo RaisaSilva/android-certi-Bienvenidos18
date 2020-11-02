@@ -59,7 +59,7 @@
 
     <!--- MENU CIUDADES -->
     <string name="menu_ciudades">¿Qué ciudad te gustaría?</string>
-
+    <string name="la_paz">La Paz</string>
 
 
 </resources>
