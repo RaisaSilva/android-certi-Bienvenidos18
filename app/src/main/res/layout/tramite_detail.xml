@@ -18,15 +18,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="70"
-            android:hint="Escribe un comentario..." />
+            android:hint="@string/escribe_comentario" />
 
         <Button
             android:id="@+id/enviar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="30"
-            android:hint="Enviar"
-            android:text="Enviar" />
+            android:text="@string/enviar_comentario" />
 
 
     </LinearLayout>

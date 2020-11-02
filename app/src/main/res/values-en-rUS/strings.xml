@@ -30,4 +30,21 @@
     <string name="b3">Did you know?</string>
 
 
+    <string name="plataforma">Platform</string>
+    <string name="sucursal">More than one branch office?</string>
+    <string name="titulo_crear">Title of procedure</string>
+    <string name="añadir_imagen">Add image</string>
+    <string name="info_add">Enter additional information...</string>
+    <string name="cancelar">Cancel</string>
+    <string name="guardar">Save</string>
+
+
+    <string name="tramites">Procedures</string>
+    <string name="crear_tramite">Create</string>
+
+    <string name="escribe_comentario">Write a comment...</string>
+    <string name="enviar_comentario">Send</string>
+    <string name="menu_ciudades">What city would you like?</string>
+
+
 </resources>

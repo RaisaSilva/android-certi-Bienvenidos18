@@ -19,7 +19,7 @@
         android:background="@color/colorAccent"
         android:gravity="center_horizontal"
         android:padding="@dimen/space_sm"
-        android:text="Trámites"
+        android:text="@string/tramites"
         android:textSize="@dimen/space_xxl"
         android:textStyle="bold" />
 
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:clickable="true"
-        android:text="Button" />
+        android:text="@string/crear_tramite" />
 
 
 </LinearLayout>

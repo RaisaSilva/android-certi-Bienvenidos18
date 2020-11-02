@@ -8,7 +8,6 @@
     <string name="registro">Registrarse</string>
 
 
-
     <!--REGISTRO -->
     <string name="crear">Crea una Cuenta</string>
     <string name="nombre">Ingrese su nombre</string>
@@ -17,6 +16,13 @@
     <string name="repetir">Repite la contraseña</string>
     <string name="reg">Registrarse</string>
 
+    <!--- MENU PRINCIPAL -->
+    <string name="titulo">¿En qué te podemos ayudar?</string>
+    <string name="b1">Tramite</string>
+    <string name="b2">Universidad</string>
+    <string name="b3">¿Sabias Que?</string>
+
+
     <!--- ERRORS -->
     <string name="error_fill_values">Llena todos los valores</string>
     <string name="error_no_connection">Revisa tu conexión a internet</string>
@@ -24,11 +30,31 @@
     <string name="error_valid_email">Ingresa un correo válido</string>
     <string name="error_unknown">Error desconocido</string>
 
-    <!--- MENU PRINCIPAL -->
-    <string name="titulo">¿En qué te podemos ayudar?</string>
-    <string name="b1">Tramite</string>
-    <string name="b2">Universidad</string>
-    <string name="b3">¿Sabias Que?</string>
+
+    <!---  ITEM TRAMITES -->
+    <string name="plataforma">Plataforma</string>
+    <string name="sucursal">Más de una sucursal?</string>
+
+
+    <!---  POST TRAMITES -->
+    <string name="titulo_crear">Título del trámite</string>
+    <string name="añadir_imagen">Añadir Imagen</string>
+    <string name="info_add">Ingrese información adicional...</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="guardar">Guardar</string>
+
+
+    <!---  LIST TRAMITES -->
+    <string name="tramites">Trámites</string>
+    <string name="crear_tramite">Crear</string>
+
+    <!---  TRAMITES DETAIL -->
+    <string name="escribe_comentario">Escribe un comentario...</string>
+    <string name="enviar_comentario">Enviar</string>
+
+
+    <!--- MENU CIUDADES -->
+    <string name="menu_ciudades">¿Qué ciudad te gustaría?</string>
 
 
 

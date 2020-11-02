@@ -42,7 +42,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Plataforma" />
+                android:text="@string/plataforma" />
 
             <TextView
                 android:id="@+id/plataformaTextView"
@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/space_md"
                 android:gravity="center"
-                android:text="Más de una sucursal?" />
+                android:text="@string/sucursal" />
 
             <TextView
                 android:id="@+id/sucursalesTextView"

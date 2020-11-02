@@ -20,24 +20,24 @@
             android:id="@+id/titleEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Titulo del trámite" />
+            android:hint="@string/titulo_crear" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/pickImageButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_md"
-        android:text="post_image" />
-
+        android:text="@string/añadir_imagen" />
 
     <EditText
         android:id="@+id/contentEditText"
         android:layout_width="380dp"
         android:layout_height="350dp"
         android:gravity="start|top"
-        android:hint="Ingrese infromación adicional..."
+        android:hint="@string/info_add"
         android:inputType="textMultiLine"
         android:lines="5" />
 
@@ -52,13 +52,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Cancelar" />
+            android:text="@string/cancelar" />
 
         <Button
             android:id="@+id/saveButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Guardar" />
+            android:text="@string/guardar" />
     </LinearLayout>
 </LinearLayout>
