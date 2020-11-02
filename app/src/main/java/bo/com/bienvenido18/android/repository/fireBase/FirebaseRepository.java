@@ -29,10 +29,11 @@ public class FirebaseRepository {
         }
         return instance;
     }
-    public FirebaseRepository(){
+
+    public FirebaseRepository() {
         auth = new FirebaseAuthManager();
-        storage=new FirebaseStorageManager();
-        db =new FirebaseDbManager();
+        storage = new FirebaseStorageManager();
+        db = new FirebaseDbManager();
     }
 
     public LiveData<Base<UserO>> loginWithEmailPassword(String email, String password) {
@@ -42,13 +43,36 @@ public class FirebaseRepository {
 
     public LiveData<Base<String>> addPostToTramite(String uuidTramite, PostTramite postTramite, Uri image) {
 
-
-        //succes or failed at UI
-        return db.addPostToTramite(uuidTramite, postTramite);
-        //TODO Step 2: add to storage
-        //TODO Step 3: update db
-
+        MutableLiveData<Base<String>> results = new MutableLiveData<>();
+        //Step 1: Create record
+        db.addPostToTramite(uuidTramite, postTramite).observeForever(uuidPostBase -> {
+            if (uuidPostBase.isSuccess()) {
+                //Step 2: Upload image
+                String uuidPost = uuidPostBase.getData();
+               /* storage.uploadPostImage(uuidPost, image).observeForever(urlBase -> {
+                    if (urlBase.isSuccess()) {
+                        //Step 3: Update record
+                        String url = urlBase.getData();
+                        db.updateCoverPhoto(uuidTramite, uuidPost, url).observeForever(resultUpdateBase -> {
+                            if (resultUpdateBase.isSuccess()) {
+                                results.postValue(new Base<>(uuidPost));
+                            } else {
+                                results.postValue(new Base<>(resultUpdateBase.getErrorCode(), resultUpdateBase.getException()));
+                            }
+                        });
+                    } else {
+                        results.postValue(new Base<>(urlBase.getErrorCode(), urlBase.getException()));
+                    }
+                });*/
+            } else {
+                results.postValue(new Base<>(uuidPostBase.getErrorCode(), uuidPostBase.getException()));
+            }
+        });
+        return results;
     }
+
+
+
 
     public LiveData<Base<List<PostTramite>>> observeTramitePost(String uuiTramite) {
         return db.observeTramitePost(uuiTramite);
