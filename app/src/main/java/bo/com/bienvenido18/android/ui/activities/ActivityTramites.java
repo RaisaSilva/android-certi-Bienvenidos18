@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
@@ -30,10 +32,12 @@ import bo.com.bienvenido18.android.R;
 import bo.com.bienvenido18.android.model.Base;
 import bo.com.bienvenido18.android.model.PostTramite;
 import bo.com.bienvenido18.android.model.users.Tramites;
+import bo.com.bienvenido18.android.model.users.UserO;
 import bo.com.bienvenido18.android.ui.adapter.AdapterTramites;
 import bo.com.bienvenido18.android.ui.callBack.TramitesCallback;
 import bo.com.bienvenido18.android.utils.Constants;
 import bo.com.bienvenido18.android.utils.ErrorMapper;
+import bo.com.bienvenido18.android.viewModel.LoginViewModel;
 import bo.com.bienvenido18.android.viewModel.TramitesViewModel;
 
 public class ActivityTramites extends AppCompatActivity implements TramitesCallback {
@@ -41,13 +45,13 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
     private static final String LOG = ActivityU.class.getName();
     private Context context;
     private TramitesViewModel viewModel;
-    private LinearLayout linearLayout;
+    private RelativeLayout linearLayout;
     private RecyclerView transRecyclerView;
     private AdapterTramites adapter;
     private List<Tramites> tramites = new ArrayList<>();
-    private Button nuevoT;
+    private FloatingActionButton nuevoT;
     private PostTramite postTselected;
-    // private LinearLayout mapaTramitesInfo;
+    private FirebaseAuth mAuth;
 
 
     @Override
@@ -66,7 +70,19 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
         getIntentValues();
         subscribeToData();
 
-        nuevoT= (Button)findViewById(R.id.nuevoTra);
+        nuevoT= (FloatingActionButton)findViewById(R.id.nuevoTra);
+
+        mAuth = FirebaseAuth.getInstance();
+        if (mAuth.getCurrentUser() != null){
+            String EMAIL= mAuth.getCurrentUser().getEmail();
+            if (EMAIL.equals("nuria.michel@gmail.com")
+            ||EMAIL.equals("raisa.silva@gmail.com")
+            ||EMAIL.equals("liz.vasquez@gmail.com")){
+                if(nuevoT.getVisibility()==View.GONE){
+                    nuevoT.setVisibility(View.VISIBLE);
+                }
+            }
+        }
 
         nuevoT.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,7 +94,6 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
     private void initViews() {
         linearLayout = findViewById(R.id.layoutTramite);
         transRecyclerView = findViewById(R.id.RecyclerIdTramites);
-        //mapaTramitesInfo=findViewById(R.id.mapaTramitesInfo);
 
         adapter = new AdapterTramites(tramites, context);
         transRecyclerView.setAdapter(adapter);
@@ -125,10 +140,6 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
                     Toast.makeText(context, ErrorMapper.getError(context, listBase.getErrorCode()),
                             Toast.LENGTH_SHORT).show();
                 }
-
-
-
-
             }
         });
     }
@@ -142,5 +153,6 @@ public class ActivityTramites extends AppCompatActivity implements TramitesCallb
         startActivity(intent);
 
     }
+
 
 }

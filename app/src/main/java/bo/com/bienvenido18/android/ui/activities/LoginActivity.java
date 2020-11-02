@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -32,15 +33,13 @@ public class LoginActivity extends AppCompatActivity {
     private Context context;
 
     private RelativeLayout parentRelativeLayout;
-
-
-
     private LinearLayout backgroundLoginLinearLayout;
     private EditText emailEditText;
     private EditText passwordEditText;
     private ImageButton loginButton;
 
     private LoginViewModel viewModel;
+    private ProgressDialog loading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,9 +82,11 @@ public class LoginActivity extends AppCompatActivity {
     public void login(View view) {
         String email = emailEditText.getText().toString();
         String password = passwordEditText.getText().toString();
+        showLoading();
         viewModel.loginWithEmailPassword(email, password).observe(this, new Observer<Base<UserO>>() {
             @Override
             public void onChanged(Base<UserO> userBase) {
+                dismissLoading();
                 if (userBase.isSuccess()) {
                     Intent intent = new Intent(context, Launcher.class);
                     intent.putExtra(Constants.KEY_UUID, userBase.getData().getUuid());
@@ -110,5 +111,18 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(context, RegisterActivity.class);
         startActivity(intent);
     }
+    private void showLoading() {
+        loading = new ProgressDialog(context);
+        loading.setTitle("Cargando");
+        loading.setCancelable(false);
+        loading.show();
+    }
+
+    private void dismissLoading() {
+        if (loading != null && loading.isShowing()) {
+            loading.dismiss();
+        }
+    }
+
 
 }

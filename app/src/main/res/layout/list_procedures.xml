@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layoutTramite"
     android:background="#99a8b2"
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
     tools:context=".ui.activities.ActivityTramites"
     android:orientation="vertical">
-
 
 
     <TextView
@@ -25,18 +23,21 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/tramitesList"
         android:id="@+id/RecyclerIdTramites"
         android:layout_width="match_parent"
-        android:layout_height="432dp"
+        android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    <Button
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/nuevoTra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:clickable="true"
-        android:text="@string/crear_tramite" />
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@drawable/ic_plus_icon_icons_com_70890"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="end|bottom"
+        android:visibility="gone"/>
 
-
-</LinearLayout>
+</RelativeLayout>

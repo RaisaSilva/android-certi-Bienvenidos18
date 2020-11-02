@@ -57,6 +57,7 @@ public class Launcher extends AppCompatActivity {
     }
     public void logout(View view){
         viewModel.logout();
+        startActivity(new Intent(Launcher.this,LoginActivity.class));
         finish();
     }
 }
