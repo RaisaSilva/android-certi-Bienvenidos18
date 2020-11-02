@@ -90,8 +90,7 @@ public class MockRepository implements RepositoryImpl {
 
     @Override
     public LiveData<Base<List<Tramites>>> getTramites(String trans) {
-        return ApiRepository.getInstance().getTramites();
-        /*MutableLiveData<Base<List<Tramites>>> results = new MutableLiveData<>();
+        MutableLiveData<Base<List<Tramites>>> results = new MutableLiveData<>();
         String json = "[{\"uuid\":\"1\",\"titlePhoto\":\"venta de autos\",\"coverPhoto\":\"https://i.prcdn.co/img?regionKey=8FCcrEagurNyAFzvjqo%2F6w%3D%3D\"},{\"uuid\":\"2\",\"titlePhoto\":\"Procedimiento legislativo\",\"coverPhoto\":\"https://image.slidesharecdn.com/procedimientolegislativovigente-1-120921151702-phpapp01/95/procedimiento-legislativo-vigente-en-bolivia-1-728.jpg?cb=1348240889\"},{\"uuid\":\"3\",\"titlePhoto\":\"Compra de propiedad\",\"coverPhoto\":\"https://i.prcdn.co/img?regionKey=diG8G3PK6WpRfMqmsbQiIQ%3D%3D\"},{\"uuid\":\"4\",\"titlePhoto\":\"Viviendas\",\"coverPhoto\":\"https://i.pinimg.com/originals/b1/e9/ab/b1e9ab014f4440c04e7dd23752b978c0.jpg.\"},{\"uuid\":\"5\",\"titlePhoto\":\"Elección de vivienda\",\"coverPhoto\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSZtXLr-1A_eYCHQkZ2k5JlMD7dcN4gwwxnTQ&usqp=CAU\"},{\"uuid\":\"3\",\"titlePhoto\":\"Compra de propiedad\",\"coverPhoto\":\"https://i.prcdn.co/img?regionKey=diG8G3PK6WpRfMqmsbQiIQ%3D%3D\"},{\"uuid\":\"4\",\"titlePhoto\":\"Viviendas\",\"coverPhoto\":\"https://i.pinimg.com/originals/b1/e9/ab/b1e9ab014f4440c04e7dd23752b978c0.jpg.\"},{\"uuid\":\"5\",\"titlePhoto\":\"Elección de vivienda\",\"coverPhoto\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSZtXLr-1A_eYCHQkZ2k5JlMD7dcN4gwwxnTQ&usqp=CAU\"},{\"uuid\":\"3\",\"titlePhoto\":\"Compra de propiedad\",\"coverPhoto\":\"https://i.prcdn.co/img?regionKey=diG8G3PK6WpRfMqmsbQiIQ%3D%3D\"},{\"uuid\":\"4\",\"titlePhoto\":\"Viviendas\",\"coverPhoto\":\"https://i.pinimg.com/originals/b1/e9/ab/b1e9ab014f4440c04e7dd23752b978c0.jpg.\"},{\"uuid\":\"5\",\"titlePhoto\":\"Elección de vivienda\",\"coverPhoto\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSZtXLr-1A_eYCHQkZ2k5JlMD7dcN4gwwxnTQ&usqp=CAU\"}]";
 
         Type listType = new TypeToken<ArrayList<Tramites>>() {
@@ -101,18 +100,17 @@ public class MockRepository implements RepositoryImpl {
         return results;
 
 
-    }*/
     }
+
     @Override
     public LiveData<Base<List<Comentarios>>> getComentarios(String comen) {
-        return ApiRepository.getInstance().getComentarios();
-        /*MutableLiveData<Base<List<Comentarios>>> results = new MutableLiveData<>();
+        MutableLiveData<Base<List<Comentarios>>> results = new MutableLiveData<>();
         String json ="[{\"uuid\":\"1\",\"alias\":\"Nuria\",\"date\":\"10:30 am\",\"comentario\":\"Más información por favor.\"},{\"uuid\":\"2\",\"alias\":\"Raisa\",\"date\":\"13:00 pm\",\"comentario\":\"Saben si tiene tiene otra sucursal???\"},{\"uuid\":\"3\",\"alias\":\"Liz\",\"date\":\"17:24 pm\",\"comentario\":\"Hay que llevar carnet?\"},{\"uuid\":\"4\",\"alias\":\"Benjamin\",\"date\":\"22:00 pm\",\"comentario\":\"De 11:00 a 13:00 no atienden, por si acaso.\"}]";
         Type listType = new TypeToken<ArrayList<Comentarios>>() {
         }.getType();
         List<Comentarios> uniList = new Gson().fromJson(json, listType);
         results.postValue(new Base<>(uniList));
-        return results;*/
+        return results;
     }
 
     @Override

@@ -12,6 +12,7 @@ public class Constants {
     public static final int ERROR_REGISTER = 2007;
     public static final int ERROR_REGISTER_EMAIL_ALREADY_EXISTS = 2003;
 
+
     //Server
     public static final int ERROR_SERVER = 3000;
 

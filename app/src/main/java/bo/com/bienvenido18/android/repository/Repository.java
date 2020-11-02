@@ -20,6 +20,7 @@ import bo.com.bienvenido18.android.repository.api.ApiRepository;
 import bo.com.bienvenido18.android.repository.fireBase.FirebaseRepository;
 import bo.com.bienvenido18.android.repository.local.LocalRepository;
 import bo.com.bienvenido18.android.ui.adapter.Universidades;
+import bo.com.bienvenido18.android.utils.Constants;
 
 public class Repository implements RepositoryImpl {
     private LocalRepository local;
@@ -59,6 +60,9 @@ public class Repository implements RepositoryImpl {
                     results.postValue(listBase);
                     //actualizar la db
                     local.update(listBase.getData());
+                }else{
+                    results.postValue(new Base<>(Constants.ERROR_NO_CONNECTION, listBase.getException()));
+
                 }
             }
         });
