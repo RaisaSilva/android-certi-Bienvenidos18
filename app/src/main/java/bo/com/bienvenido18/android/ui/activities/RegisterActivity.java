@@ -1,7 +1,11 @@
 package bo.com.bienvenido18.android.ui.activities;
+
 import bo.com.bienvenido18.android.R;
 import bo.com.bienvenido18.android.model.Base;
 import bo.com.bienvenido18.android.model.users.UserO;
+import bo.com.bienvenido18.android.utils.Constants;
+import bo.com.bienvenido18.android.utils.ErrorMapper;
+import bo.com.bienvenido18.android.utils.Validations;
 import bo.com.bienvenido18.android.viewModel.RegisterViewModel;
 
 import androidx.annotation.NonNull;
@@ -9,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -23,8 +28,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -33,6 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private Context context;
     private RegisterViewModel registerViewModel;
+    private RelativeLayout parentRelativeLayout;
 
     private TextInputEditText nameTextInputEditText;
     private TextInputEditText emailTextInputEditText;
@@ -43,10 +52,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     private ProgressDialog loading;
 
-    private static final int RC_PERMISSIONS = 201;
-    private static final int RC_GALLERY = 202;
-
-    private Uri fileCoverPhoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +60,7 @@ public class RegisterActivity extends AppCompatActivity {
         this.context = this;
         registerViewModel = new ViewModelProvider(this).get(RegisterViewModel.class);
         getSupportActionBar().hide();
-        imageButton=findViewById(R.id.botonAtras);
+        imageButton = findViewById(R.id.botonAtras);
 
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +75,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void initViews() {
+        parentRelativeLayout = findViewById(R.id.parentRelativeLayoutRegister);
         nameTextInputEditText = findViewById(R.id.nameTextInputEditText);
         emailTextInputEditText = findViewById(R.id.emailTextInputEditText);
         passwordTextInputEditText = findViewById(R.id.passwordTextInputEditText);
@@ -95,10 +101,14 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void registerUser(View view) {
-        //TODO validaciones
+
         UserO user = new UserO(emailTextInputEditText.getText().toString(),
                 passwordTextInputEditText.getText().toString());
         user.setDisplayName(nameTextInputEditText.getText().toString());
+        /*if(!(passwordTextInputEditText.getText().toString().equals(passwordRepeatTextInputEditText.getText().tostr))) {
+
+            Toast.makeText(context, "Las contraseñas no son iguales", Toast.LENGTH_SHORT).show();
+        }*/
 
         showLoading();
         registerViewModel.register(user).observe(this, new Observer<Base<UserO>>() {
@@ -106,57 +116,20 @@ public class RegisterActivity extends AppCompatActivity {
             public void onChanged(Base<UserO> userBase) {
                 dismissLoading();
                 if (userBase.isSuccess()) {
-                    RegisterActivity.this.finish();
+                    startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
+                    finish();
+
 
                 } else {
-                    Toast.makeText(context, "Error al registrar el usuario", Toast.LENGTH_SHORT).show();
+                    Snackbar.make(parentRelativeLayout,
+                            ErrorMapper.getError(context, userBase.getErrorCode()),
+                            BaseTransientBottomBar.LENGTH_SHORT).show();
                 }
             }
         });
+
+
     }
 
-    private boolean hasPermissions() {
-        return ContextCompat.checkSelfPermission(context, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
-    }
 
-
-    @RequiresApi(api = Build.VERSION_CODES.M)
-    private void askPermissions() {
-        requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, RC_PERMISSIONS);
-    }
-
-    /*@Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case RC_PERMISSIONS:
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    openGallery();
-                } else {
-                    Toast.makeText(context, "Sin permisos", Toast.LENGTH_SHORT).show();
-                }
-                break;
-            default:
-                break;
-        }
-    }*/
-
-    /*private void openGallery() {
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, getString(R.string.post_image)),
-                RC_GALLERY);
-    }*/
-
-    /*@Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK) {
-            if (requestCode == RC_GALLERY && data != null && data.getData() != null) {
-                Uri image = data.getData();
-                fileCoverPhoto = CompressImage.compressImage(image, context);
-            }
-        }
-    }*/
 }

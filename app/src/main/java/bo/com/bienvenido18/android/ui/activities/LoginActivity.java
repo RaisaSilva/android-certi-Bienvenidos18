@@ -71,8 +71,6 @@ public class LoginActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.password);
         loginButton = findViewById(R.id.loginButton);
 
-        emailEditText.setText("nuria.michel@gmail.com");
-        passwordEditText.setText("contrasena1");
 }
 
     private void initEvents() {

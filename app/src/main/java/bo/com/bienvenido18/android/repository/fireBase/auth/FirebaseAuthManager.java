@@ -1,5 +1,7 @@
 package bo.com.bienvenido18.android.repository.fireBase.auth;
 
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -69,6 +71,20 @@ public class FirebaseAuthManager {
     }
     public LiveData<Base<UserO>> registerUser(UserO user) {
         MutableLiveData<Base<UserO>> results = new MutableLiveData<>();
+        if (Validations.isEmpty(user.getEmail()) || Validations.isEmpty(user.getPassword())) {
+            results.postValue(new Base(Constants.ERROR_EMPTY_VALUES, null));
+            return results;
+        }
+
+        if (!Validations.isValidEmail(user.getEmail())) {
+            results.postValue(new Base(Constants.ERROR_INVALID_EMAIL, null));
+            return results;
+        }
+        if (!Validations.isValidPasswoord(user.getPassword())) {
+            results.postValue(new Base(Constants.ERROR_wRONG_PASSWORD, null));
+            return results;
+        }
+
         mAuth.createUserWithEmailAndPassword(user.getEmail(), user.getPassword())
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
